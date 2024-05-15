@@ -42,12 +42,12 @@ async function checkAuth(path) {
     const [isValid] = await verifyToken(token);
     if (isValid) {
       // Redirigir al dashboard si se intenta acceder al login o a la raíz
-      if (path === '/login' || path === '/') {
+      if (path === '/homePublic' || path === '/') {
         navigateTo('/dashboard');
         return;
       }
       // Ejecutar componente privado correspondiente
-      const privateRoute = routes.private.find((r) => r.path === path);
+      const privateRoute = routes.private.find((r) => r.path === path);//selecionamos la primera ruta que consida con nuestro path
       if (privateRoute) {
         const { pageContent, logic } = privateRoute.component();
         DashboardLayout(pageContent, logic)
@@ -56,12 +56,12 @@ async function checkAuth(path) {
         navigateTo('/dashboard'); // Redirigir a dashboard si la ruta privada no existe
       }
     } else {
-      // Token no válido, redirigir a login
-      navigateTo('/login');
+      // Token no válido, redirigir a home inicial
+      navigateTo('/homePublic');
     }
   } else {
-    // Si no hay token, redirigir a login
-    navigateTo('/login');
+    // Si no hay token, redirigir a al home inicial
+    navigateTo('/homePublic');
   }
 }
 
@@ -71,7 +71,7 @@ export async function Router() {
   console.log(path);
 
   // Verificar autenticación antes de decidir qué componente mostrar
-  if (path === '/login' || path === '/') {
+  if (path === '/homePublic' || path === '/') {
     const token = localStorage.getItem('token');
     if (token) {
       const [isValid] = await verifyToken(token);
@@ -92,7 +92,7 @@ export async function Router() {
     checkAuth(path);
   } else {
     console.warn('Ruta no encontrada:', path);
-    navigateTo('/login');
+    navigateTo('/homePublic');
   }
 }
 

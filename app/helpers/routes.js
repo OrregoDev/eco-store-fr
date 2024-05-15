@@ -1,4 +1,4 @@
-import { LoginPage } from '../scenes/public/login';
+import { Homepage } from '../scenes/public/homePublic';
 import { HomeScene } from '../scenes/private/home';
 import { ReportScene } from '../scenes/private/reports';
 import { SettingsScene } from '../scenes/private/settings';
@@ -11,6 +11,6 @@ export const routes = {
         { path: '/dashboard/settings', component: SettingsScene }
     ],
     public: [
-        { path: '/login', component: LoginPage }
+        { path: '/homePublic', component: Homepage }
     ]
 };
