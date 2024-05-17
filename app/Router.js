@@ -10,8 +10,8 @@ async function verifyToken(token) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     if (!response.ok) {
@@ -41,28 +41,28 @@ async function checkAuth(path, params) {
     const [isValid] = await verifyToken(token);
     if (isValid) {
       // Redirigir al dashboard si se intenta acceder al login o a la raíz
-      if (path === '/home-page' || path === '/') {
+      if (path === '/homePublic' || path === '/') {
         navigateTo('/dashboard');
         return;
       }
 
       // Ejecutar componente privado correspondiente
-      const privateRoute = routes.private.find((r) => r.path === path);
+      const privateRoute = routes.private.find((r) => r.path === path); //selecionamos la primera ruta que consida con nuestro path
       if (privateRoute) {
         // hace la peticion al backend.
         const { pageContent, logic } = privateRoute.component(params);
-        DashboardLayout(pageContent, logic)
+        DashboardLayout(pageContent, logic);
         return;
       } else {
         navigateTo('/dashboard'); // Redirigir a dashboard si la ruta privada no existe
       }
     } else {
-      // Token no válido, redirigir a login
-      navigateTo('/home-page');
+      // Token no válido, redirigir a home inicial
+      navigateTo('/homePublic');
     }
   } else {
-    // Si no hay token, redirigir a login
-    navigateTo('/home-page');
+    // Si no hay token, redirigir a al home inicial
+    navigateTo('/homePublic');
   }
 }
 
@@ -72,7 +72,7 @@ export async function Router() {
   const params = new URLSearchParams(window.location.search);
 
   // Verificar autenticación antes de decidir qué componente mostrar
-  if (path === '/home-page') {
+  if (path === '/homePublic' || path === '/') {
     const token = localStorage.getItem('token');
     if (token) {
       const [isValid] = await verifyToken(token);
@@ -93,7 +93,7 @@ export async function Router() {
     checkAuth(path, params);
   } else {
     console.warn('Ruta no encontrada:', path);
-    navigateTo('/home-page');
+    navigateTo('/homePublic');
   }
 }
 
