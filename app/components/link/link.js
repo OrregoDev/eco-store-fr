@@ -1,4 +1,4 @@
-import { navigateTo } from "../../../ritchie-olp-2024-1-js-fr/app/Router";
+import { navigateTo } from "../../Router";
 
 export function Link(data = {}, children) {
     const btn = document.createElement('BUTTON');

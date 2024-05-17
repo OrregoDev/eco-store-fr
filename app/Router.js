@@ -29,27 +29,28 @@ async function verifyToken(token) {
 
 // Navegar a una nueva ruta
 export function navigateTo(path) {
-  console.log("navigating to path");
   window.history.pushState({}, '', window.location.origin + path);
   Router();
 }
 
 // Verificar la autenticación y redirigir
-async function checkAuth(path) {
+async function checkAuth(path, params) {
   const token = localStorage.getItem('token');
 
   if (token) {
     const [isValid] = await verifyToken(token);
     if (isValid) {
       // Redirigir al dashboard si se intenta acceder al login o a la raíz
-      if (path === '/login' || path === '/') {
+      if (path === '/home-page' || path === '/') {
         navigateTo('/dashboard');
         return;
       }
+
       // Ejecutar componente privado correspondiente
       const privateRoute = routes.private.find((r) => r.path === path);
       if (privateRoute) {
-        const { pageContent, logic } = privateRoute.component();
+        // hace la peticion al backend.
+        const { pageContent, logic } = privateRoute.component(params);
         DashboardLayout(pageContent, logic)
         return;
       } else {
@@ -57,21 +58,21 @@ async function checkAuth(path) {
       }
     } else {
       // Token no válido, redirigir a login
-      navigateTo('/login');
+      navigateTo('/home-page');
     }
   } else {
     // Si no hay token, redirigir a login
-    navigateTo('/login');
+    navigateTo('/home-page');
   }
 }
 
 // Definir y manejar el router
 export async function Router() {
-  const path = window.location.pathname;
-  console.log(path);
+  const path = window.location.pathname; // /home-page
+  const params = new URLSearchParams(window.location.search);
 
   // Verificar autenticación antes de decidir qué componente mostrar
-  if (path === '/login' || path === '/') {
+  if (path === '/home-page') {
     const token = localStorage.getItem('token');
     if (token) {
       const [isValid] = await verifyToken(token);
@@ -87,12 +88,12 @@ export async function Router() {
   const privateRoute = routes.private.find((r) => r.path === path);
 
   if (publicRoute) {
-    publicRoute.component();
+    publicRoute.component(params);
   } else if (privateRoute) {
-    checkAuth(path);
+    checkAuth(path, params);
   } else {
     console.warn('Ruta no encontrada:', path);
-    navigateTo('/login');
+    navigateTo('/home-page');
   }
 }
 
