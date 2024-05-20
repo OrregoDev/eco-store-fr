@@ -24,6 +24,7 @@ import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/search_2
 import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 export async function HomePagePublic(){
     const root = document.getElementById('root');
+    
     root.innerHTML = `
     <div ${styles.cuerpo}> 
     <!-- header  -->
@@ -236,5 +237,9 @@ export async function HomePagePublic(){
       hill4.style.left = value * -1 + "px";
       hill5.style.left = value * 1 + "px";
     });
+
+    user.addEventListener('click', () => {
+      window.location.href = '/login'; // Reemplaza '/login' con la ruta deseada
+  });
 }
 
