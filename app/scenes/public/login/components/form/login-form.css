@@ -13,6 +13,81 @@
 
 }
 
+/* Estilo para la ventana modal */
+.backgroundOpacity {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 10%;
+    top: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 20px;
+  }
+  
+  .form {
+    background-color: #fefefe;
+    margin-left: 80px;
+    margin-right: 40px;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+  }
+  
+  .Login {
+    text-align: center;
+  }
+  
+  .label {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .input-email,
+  .input-password {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .button-send {
+    width: 100%;
+    padding: 10px;
+    background-color: #298172;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .button-send:hover {
+    background-color: #45a049;
+  }
+  
+  .divRight {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+  
+  .registerBtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    
+  }
+  
+  .registerBtn:hover {
+    background-color: #45a049;
+  }
+  
+
+
 .backgroundOpacity {
     background-color: rgba(41, 129, 114, 0.5);
     color: white;

@@ -1,31 +1,35 @@
-import styles from './style.css';
-import hill from '../../../assets/img/hill1.png';
-import hill2 from '../../../assets/img/hill2.png';
-import hill3 from '../../../assets/img/hill3.png';
-import hill_4 from '../../../assets/img/hill4.png';
-import hill_5 from '../../../assets/img/hill5.png';
-import facebook from '../../../assets/img/facebook.png';
-import casa from '../../../assets/img/casa.png';
-import comida from '../../../assets/img/comida.png';
-import hojaM from '../../../assets/img/hojaM.png';
-import cepillo from '../../../assets/img/cepillo.png';
-import papel from '../../../assets/img/papel.png';
-import leaff from '../../../assets/img/leaf.png';
-import logo from '../../../assets/img/logo.png';
-import plant from '../../../assets/img/plant.png';
-import tree from '../../../assets/img/tree.png';
-import imagenAbout from '../../../assets/img/imagenAbout.png';
-import whastp from '../../../assets/img/whastp.png';
-import youtube from '../../../assets/img/youtube.png';
-import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import person_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-export async function HomePagePublic(){
-    const root = document.getElementById('root');
-    
-    root.innerHTML = `
+import styles from "./style.css";
+import hill from "../../../assets/img/hill1.png";
+import hill2 from "../../../assets/img/hill2.png";
+import hill3 from "../../../assets/img/hill3.png";
+import hill_4 from "../../../assets/img/hill4.png";
+import hill_5 from "../../../assets/img/hill5.png";
+import facebook from "../../../assets/img/facebook.png";
+import casa from "../../../assets/img/casa.png";
+import comida from "../../../assets/img/comida.png";
+import hojaM from "../../../assets/img/hojaM.png";
+import cepillo from "../../../assets/img/cepillo.png";
+import papel from "../../../assets/img/papel.png";
+import leaff from "../../../assets/img/leaf.png";
+import logo from "../../../assets/img/logo.png";
+import plant from "../../../assets/img/plant.png";
+import tree from "../../../assets/img/tree.png";
+import imagenAbout from "../../../assets/img/imagenAbout.png";
+import whastp from "../../../assets/img/whastp.png";
+import youtube from "../../../assets/img/youtube.png";
+import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import person_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import search_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import style from "../../public/login/components/form/login-form.css";
+import { login } from "../login/components/form";
+import { formValidator } from "../../../helpers";
+
+export async function HomePagePublic() {
+  const root = document.getElementById("root");
+
+  root.innerHTML = `
     <div ${styles.cuerpo}> 
     <!-- header  -->
     <header class="${styles.header}" id="head">
@@ -188,58 +192,112 @@ export async function HomePagePublic(){
       </div>
     </footer>
     </div>
-    `
-    let text = document.getElementById("text");
-    let leaf = document.getElementById("leaf");
-    let hill1 = document.getElementById("hill1");
-    let hill4 = document.getElementById("hill4");
-    let hill5 = document.getElementById("hill5");
-    let header = document.getElementById("head");
-    let user = document.getElementById("user");
-    let carrito = document.getElementById("carrito");
-    let input = document.getElementById("input_1");
-    let aboutSection = document.getElementById("about_secion");
-    
-    // Calcula la posición vertical de la sección "About Us"
-    let aboutSectionPosition = aboutSection.offsetTop;
-    
-    window.addEventListener("scroll", () => {
-      let value = window.scrollY;
-      
-      if (value < 114) {
-        // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
-        header.style.backgroundColor = "transparent";
-        carrito.style.backgroundColor = "transparent";
-        user.style.backgroundColor = "transparent";
-        input.style.border = "none";
-      } else {
-        // Aplicar estilos cuando el usuario ha pasado cierta posición
-        header.style.backgroundColor = "#f9f9f9";
-        carrito.style.backgroundColor = "#298172";
-        user.style.backgroundColor = "#298172";
-        carrito.style.padding = "5px";
-        user.style.padding = "5px";
-        carrito.style.borderRadius = "50px";
-        user.style.borderRadius = "50px";
-        input.style.border = "2px solid #298172";
-      }
-    
-      // Detener animaciones cuando el usuario alcanza la sección "About Us"
-      if (value >= aboutSectionPosition) {
-        return; // No hagas nada más si el usuario ha alcanzado la sección "About Us"
-      }
-    
-      // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
-      text.style.marginTop = value * 2.5 + "px";
-      leaf.style.left = value * 1.5 + "px";
-      leaf.style.top = value * -1.5 + "px";
-      hill1.style.top = value * 1 + "px";
-      hill4.style.left = value * -1 + "px";
-      hill5.style.left = value * 1 + "px";
-    });
+    `;
+  let text = document.getElementById("text");
+  let leaf = document.getElementById("leaf");
+  let hill1 = document.getElementById("hill1");
+  let hill4 = document.getElementById("hill4");
+  let hill5 = document.getElementById("hill5");
+  let header = document.getElementById("head");
+  let user = document.getElementById("user");
+  let carrito = document.getElementById("carrito");
+  let input = document.getElementById("input_1");
+  let aboutSection = document.getElementById("about_secion");
 
-    user.addEventListener('click', () => {
-      window.location.href = '/login'; // Reemplaza '/login' con la ruta deseada
+  // Calcula la posición vertical de la sección "About Us"
+  let aboutSectionPosition = aboutSection.offsetTop;
+
+  window.addEventListener("scroll", () => {
+    let value = window.scrollY;
+
+    if (value < 114) {
+      // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
+      header.style.backgroundColor = "transparent";
+      carrito.style.backgroundColor = "transparent";
+      user.style.backgroundColor = "transparent";
+      input.style.border = "none";
+    } else {
+      // Aplicar estilos cuando el usuario ha pasado cierta posición
+      header.style.backgroundColor = "#f9f9f9";
+      carrito.style.backgroundColor = "#298172";
+      user.style.backgroundColor = "#298172";
+      carrito.style.padding = "5px";
+      user.style.padding = "5px";
+      carrito.style.borderRadius = "50px";
+      user.style.borderRadius = "50px";
+      input.style.border = "2px solid #298172";
+    }
+
+    // Detener animaciones cuando el usuario alcanza la sección "About Us"
+    if (value >= aboutSectionPosition) {
+      return; // No hagas nada más si el usuario ha alcanzado la sección "About Us"
+    }
+
+    // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
+    text.style.marginTop = value * 2.5 + "px";
+    leaf.style.left = value * 1.5 + "px";
+    leaf.style.top = value * -1.5 + "px";
+    hill1.style.top = value * 1 + "px";
+    hill4.style.left = value * -1 + "px";
+    hill5.style.left = value * 1 + "px";
   });
-}
 
+  let SwitchPopup = false;
+  let popUp;
+
+  user.addEventListener("click", () => {
+    if (!SwitchPopup) {
+      popUp = document.createElement("div");
+      popUp.style.display = "block"; // Asegúrate de que el popup se muestre al crearlo
+      SwitchPopup = true;
+      // Aquí añades el contenido del popup al elemento popUp
+      // ...
+      // Luego lo añades al DOM, algo así como:
+      // document.body.appendChild(popUp);
+    } else {
+      // Aquí ocultas el popup y restableces la variable SwitchPopup
+      popUp.style.display = "none";
+      SwitchPopup = false;
+    }
+    popUp.className = styles.backgroundOpacity;
+    popUp.innerHTML = `
+      <div class = "${style.backgroundOpacity}">
+        <form id="loginForm" class="${style.form}">
+          <h2 class ="${style.Login}">Login</h2>
+          <label for="email" class="${style.label}">Email:</label>
+          <input type="text" id="email" name="email" autocomplete="email" class="${style["input-email"]}">
+          <label for="password" class="${style.label}">Password:</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" class="${style["input-password"]}">
+          <button type="submit" class="${style["button-send"]}">Login</button>
+        </form>
+        <div class="${style.divRight}">
+          <h2>Still do not have an account?</h2>
+          <p>Register so you can login</p>
+          <button class= "${style.registerBtn}">Register</button>
+        </div>
+      </div>
+      `;
+    root.appendChild(popUp);
+    const form = document.getElementById('loginForm');
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if(!formValidator(email, password)){
+      alert('Please fill in all fields');
+      return;
+    }
+    const token = await login(email, password);
+    if (token) {
+      localStorage.setItem('token', token);
+      navigateTo('/dashboard');
+    } else {
+      alert('Invalid credentials');
+    }
+  });
+  });
+
+  
+
+}
