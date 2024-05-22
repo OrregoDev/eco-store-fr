@@ -253,6 +253,7 @@ export async function HomePagePublic() {
   let popUp;
 
   user.addEventListener("click", () => {
+    
     if (!SwitchPopup) {
       popUp = document.createElement("div");
       popUp.style.display = "block"; // Asegúrate de que el popup se muestre al crearlo
