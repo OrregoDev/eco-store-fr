@@ -25,6 +25,7 @@ import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/s
 import style from "../../public/login/components/form/login-form.css";
 import { login } from "../login/components/form";
 import { formValidator } from "../../../helpers";
+import { navigateTo } from "../../../Router";
 
 export async function HomePagePublic() {
   const root = document.getElementById("root");
@@ -40,7 +41,7 @@ export async function HomePagePublic() {
       <!--header opciones -->
         <nav class="${styles.navigation}">
             <a href="#" class="${styles.active}">Home</a>
-            <a href="#">About</a>
+            <a href="#" id="about">About</a>
             <a href="#">Service</a>
             <a href="#">Contact</a>
         </nav>
@@ -203,6 +204,12 @@ export async function HomePagePublic() {
   let carrito = document.getElementById("carrito");
   let input = document.getElementById("input_1");
   let aboutSection = document.getElementById("about_secion");
+  let about = document.getElementById("about");
+
+  about.addEventListener("click", (evento) => {
+    evento.preventDefault()
+    navigateTo('/about-us')
+  })
 
   // Calcula la posición vertical de la sección "About Us"
   let aboutSectionPosition = aboutSection.offsetTop;
@@ -273,31 +280,35 @@ export async function HomePagePublic() {
         <div class="${style.divRight}">
           <h2>Still do not have an account?</h2>
           <p>Register so you can login</p>
-          <button class= "${style.registerBtn}">Register</button>
+          <button class= "${style.registerBtn}" id="profile-register-btn">Register</button>
         </div>
       </div>
       `;
+
+    // let profileRegisterBtn = document.getElementById("profile-register-btn");
+    // profileRegisterBtn.addEventListener("click", (event) => {
+    //   event.preventDefault();
+    //   navigateTo("/register");
+    // });
+
     root.appendChild(popUp);
-    const form = document.getElementById('loginForm');
-  form.addEventListener('submit', async (event) => {
-    event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const form = document.getElementById("loginForm");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
 
-    if(!formValidator(email, password)){
-      alert('Please fill in all fields');
-      return;
-    }
-    const token = await login(email, password);
-    if (token) {
-      localStorage.setItem('token', token);
-      navigateTo('/dashboard');
-    } else {
-      alert('Invalid credentials');
-    }
+      if (!formValidator(email, password)) {
+        alert("Please fill in all fields");
+        return;
+      }
+      const token = await login(email, password);
+      if (token) {
+        localStorage.setItem("token", token);
+        navigateTo("/dashboard");
+      } else {
+        alert("Invalid credentials");
+      }
+    });
   });
-  });
-
-  
-
 }

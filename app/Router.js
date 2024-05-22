@@ -70,7 +70,7 @@ async function checkAuth(path, params) {
 export async function Router() {
   const path = window.location.pathname; // /home-page
   const params = new URLSearchParams(window.location.search);
-
+  
   // Verificar autenticación antes de decidir qué componente mostrar
   if (path === '/home-page') {
     const token = localStorage.getItem('token');
