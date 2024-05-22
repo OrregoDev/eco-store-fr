@@ -22,6 +22,8 @@ import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/i
 import person_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg';
+import { Service } from '../services/service';
+import { navigateTo } from '../../../Router';
 export async function HomePagePublic(){
     const root = document.getElementById('root');
     
@@ -37,7 +39,7 @@ export async function HomePagePublic(){
         <nav class="${styles.navigation}">
             <a href="#" class="${styles.active}">Home</a>
             <a href="#">About</a>
-            <a href="#">Service</a>
+            <a href="#" id="service" >Service</a>
             <a href="#">Contact</a>
         </nav>
       <!-- header buscar, carrito y login -->
@@ -202,6 +204,15 @@ export async function HomePagePublic(){
     
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
+
+    let servicePage = document.getElementById('service');
+
+    servicePage.addEventListener('click', (evento) => {
+      evento.preventDefault();
+      navigateTo('/services');
+    });
+
+
     
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
