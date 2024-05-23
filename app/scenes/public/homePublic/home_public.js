@@ -74,12 +74,20 @@ export function HomePagePublic(params) {
           <p class="${styles.text_product_top}">Top select</p>
           <div class="${styles.top_product}">
             <img class="${styles.arrow}" src=".${arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-            <div class="${styles.card}">
+            <div class="${styles.card} " id="lista_1">
               <div class="${styles.card_prodct}">
                 <img src="${cepillo}" alt="">
                 <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
                 <div class="${styles.producct_info}">
                   <p>Lorem, ipsum dolor.</p>
+                  <button class="${styles.btn2} agregar_carrito">Add to cart</button>
+                </div>
+              </div>
+              <div class="${styles.card_prodct}">
+                <img src="${cepillo}" alt="">
+                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
+                <div class="${styles.producct_info}">
+                  
                   <button class="${styles.btn2}">Add to cart</button>
                 </div>
               </div>
@@ -87,16 +95,9 @@ export function HomePagePublic(params) {
                 <img src="${cepillo}" alt="">
                 <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
                 <div class="${styles.producct_info}">
-                  <p>Lorem, ipsum dolor.</p>
-                  <button class="${styles.btn2}">Add to cart</button>
-                </div>
-              </div>
-              <div class="${styles.card_prodct}">
-                <img src="${cepillo}" alt="">
-                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
-                <div class="${styles.producct_info}">
-                  <p>Lorem, ipsum dolor.</p>
-                  <button class="${styles.btn2}">Add to cart</button>
+                <h3>Lorem, ipsum dolor.</h3>
+                <p class="precio" >12212</p>
+                  <button class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</button>
                 </div>
               </div>
             </div>

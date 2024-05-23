@@ -6,6 +6,84 @@ export function logicNav(){
   let user = document.getElementById("user");
   let SwitchPopup = false;
   let popUp;
+
+
+  const carrito = document.getElementById('carrito');
+  const elemetos1 = document.getElementById('lista_1');
+  const elemetos2 = document.getElementById('lista-2');
+  const elemetos3 = document.getElementById('lista-3');
+  const lista = document.querySelector('#lista-carrito div');
+  const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+  
+  cargarEventListeners();
+  function cargarEventListeners(){
+      elemetos1.addEventListener('click', comprarElemento);
+      elemetos2.addEventListener('click', comprarElemento);
+      elemetos3.addEventListener('click', comprarElemento);
+      carrito.addEventListener('click', eliminarElemnto);
+      vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
+      
+  }
+  
+  function comprarElemento(e) {
+      if(e.target.classList.contains('agregar_carrito')){
+          const elemeto = e.target.parentElement.parentElement;
+          console.log(elemeto)
+          leerDatosElemento(elemeto);
+      }
+  }
+  
+  function leerDatosElemento(elemento){
+      const infoElemnto = {
+          imagen: elemento.querySelector('img').src,
+          titulo: elemento.querySelector('h3').textContent,
+          precio: elemento.querySelector('.precio').textContent,
+          id: elemento.querySelector('a').getAttribute('data-id')
+      }
+      insertarCarrito(infoElemnto);
+  
+  
+  }
+  
+  
+  function insertarCarrito(elemento){
+      const row = document.createElement('div');
+      row.classList.add('productoencarrito');
+      row.innerHTML = `
+          <div clas="img_product_carrito">
+              <img src="${elemento.imagen}" width=100>
+          </div>
+          <div class="info_product_carrito">
+              <div class="text_product_carrito">
+                  <p>${elemento.titulo}</p>
+                  <p>${elemento.precio}</p>
+              </div>
+              <div>
+                  <a herf="#" class="eliminado" data-id="${elemento.id}">
+              </div>
+          </div>
+      `;
+      console.log(row);
+      lista.appendChild(row);
+  }
+  
+  
+  function eliminarElemnto(e){
+      let elemento,elementof;
+      if(e.target.classList.contains('eliminado')){
+          e.target.parentElement.parentElement.remove();
+          elemento = e.target.parentElement.parentElement;
+          elementof = elemento.querySelector('a').getAttribute('data-id');
+      }
+  }
+  
+  function vaciarCarrito() {
+      while(lista.firstChild){
+          lista.removeChild(lista.firstChild);
+      }
+      return false;
+  }
+  
   user.addEventListener("click", () => {
     if (!SwitchPopup) {
       popUp = document.createElement("div");
@@ -65,4 +143,7 @@ export function logicNav(){
       }
     });
   });
+  
+  
+  
 }

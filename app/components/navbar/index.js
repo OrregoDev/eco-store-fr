@@ -26,8 +26,15 @@ export function NavigationBar() {
             <input type="text" name="q" class="${styles.search_input}" id="input_1" placeholder="Buscar...">
             <img src="${search_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
         </form>
-        <div class="${styles.icon}" id="carrito">
+        <div class="${styles.icon} ${styles.submenu}" id="carrito">
           <img src="${shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24}"  alt="">
+                        <div class="${styles.carrito}" id="carrito">
+                            <div  id="lista-carrito">
+                                
+                                <div class="${styles.productos_carrito}"></div>
+                            </div>    
+                            <a href="#" id="vaciar-carrito" class="${styles.btn_3}">VAciar carrito</a>
+                        </div>
         </div>
         <div class="${styles.icon}" id="user">
           <img src="${person_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
