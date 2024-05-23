@@ -1,4 +1,5 @@
 import { DashboardLayout } from './components/layout/private/dashboard/dashboard-layout';
+import { DashboardLayoutPublic } from './components/layout/public/layout';
 import { routes } from './helpers/routes';
 
 const API_URL = 'http://localhost:4000/api/auth/verify-token';
@@ -30,7 +31,10 @@ async function verifyToken(token) {
 // Navegar a una nueva ruta
 export function navigateTo(path) {
   window.history.pushState({}, '', window.location.origin + path);
-  Router();
+  const publicRoute = routes.public.find((r) => r.path === path);
+  const params = new URLSearchParams(window.location.search)
+  const {pageContent, logic} = publicRoute.component(params)
+  DashboardLayoutPublic(pageContent,logic);
 }
 
 // Verificar la autenticación y redirigir
@@ -88,7 +92,9 @@ export async function Router() {
   const privateRoute = routes.private.find((r) => r.path === path);
 
   if (publicRoute) {
-    publicRoute.component(params);
+    const params = new URLSearchParams(window.location.search)
+    const {pageContent, logic} = publicRoute.component(params)
+    DashboardLayoutPublic(pageContent,logic);
   } else if (privateRoute) {
     checkAuth(path, params);
   } else {

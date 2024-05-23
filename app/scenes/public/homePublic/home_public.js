@@ -19,47 +19,15 @@ import whastp from "../../../assets/img/whastp.png";
 import youtube from "../../../assets/img/youtube.png";
 import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import person_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import search_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import style from "../../public/login/components/form/login-form.css";
+
 import { login } from "../login/components/form";
 import { formValidator } from "../../../helpers";
 import { navigateTo } from "../../../Router";
 
-export async function HomePagePublic() {
-  const root = document.getElementById("root");
+export function HomePagePublic(params) {
 
-  root.innerHTML = `
+  const pageContent = `
     <div ${styles.cuerpo}> 
-    <!-- header  -->
-    <header class="${styles.header}" id="head">
-      <!--header logo -->
-        <div class="${styles.logo}">
-          <img src="${logo}" alt="">
-        </div>
-      <!--header opciones -->
-        <nav class="${styles.navigation}">
-            <a href="#" class="${styles.active}">Home</a>
-            <a href="#" id="about">About</a>
-            <a href="#">Service</a>
-            <a href="#">Contact</a>
-        </nav>
-      <!-- header buscar, carrito y login -->
-      <div class="${styles.nav_active}">
-        <form action="" method="" class="${styles.search}" >
-            <input type="text" name="q" class="${styles.search_input}" id="input_1" placeholder="Buscar...">
-            <img src="${search_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-        </form>
-        <div class="${styles.icon}" id="carrito">
-          <img src="${shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24}"  alt="">
-        </div>
-        <div class="${styles.icon}" id="user">
-          <img src="${person_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-        </div>
-      </div>
-
-    </header>
     <!-- fondo de montañas -->
     <section class="${styles.parallax}">
         <img src="${hill}" id="hill1" alt="">
@@ -194,122 +162,67 @@ export async function HomePagePublic() {
     </footer>
     </div>
     `;
-  let text = document.getElementById("text");
-  let leaf = document.getElementById("leaf");
-  let hill1 = document.getElementById("hill1");
-  let hill4 = document.getElementById("hill4");
-  let hill5 = document.getElementById("hill5");
-  let header = document.getElementById("head");
-  let user = document.getElementById("user");
-  let carrito = document.getElementById("carrito");
-  let input = document.getElementById("input_1");
-  let aboutSection = document.getElementById("about_secion");
-  let about = document.getElementById("about");
 
-  about.addEventListener("click", (evento) => {
-    evento.preventDefault()
-    navigateTo('/about-us')
-  })
+  const logic = () => {
+    let text = document.getElementById("text");
+    let leaf = document.getElementById("leaf");
+    let hill1 = document.getElementById("hill1");
+    let hill4 = document.getElementById("hill4");
+    let hill5 = document.getElementById("hill5");
+    let header = document.getElementById("head");
+    let user = document.getElementById("user");
+    let carrito = document.getElementById("carrito");
+    let input = document.getElementById("input_1");
+    let aboutSection = document.getElementById("about_secion");
+    let about = document.getElementById("about");
 
-  // Calcula la posición vertical de la sección "About Us"
-  let aboutSectionPosition = aboutSection.offsetTop;
-
-  window.addEventListener("scroll", () => {
-    let value = window.scrollY;
-
-    if (value < 114) {
-      // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
-      header.style.backgroundColor = "transparent";
-      carrito.style.backgroundColor = "transparent";
-      user.style.backgroundColor = "transparent";
-      input.style.border = "none";
-    } else {
-      // Aplicar estilos cuando el usuario ha pasado cierta posición
-      header.style.backgroundColor = "#f9f9f9";
-      carrito.style.backgroundColor = "#298172";
-      user.style.backgroundColor = "#298172";
-      carrito.style.padding = "5px";
-      user.style.padding = "5px";
-      carrito.style.borderRadius = "50px";
-      user.style.borderRadius = "50px";
-      input.style.border = "2px solid #298172";
-    }
-
-    // Detener animaciones cuando el usuario alcanza la sección "About Us"
-    if (value >= aboutSectionPosition) {
-      return; // No hagas nada más si el usuario ha alcanzado la sección "About Us"
-    }
-
-    // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
-    text.style.marginTop = value * 2.5 + "px";
-    leaf.style.left = value * 1.5 + "px";
-    leaf.style.top = value * -1.5 + "px";
-    hill1.style.top = value * 1 + "px";
-    hill4.style.left = value * -1 + "px";
-    hill5.style.left = value * 1 + "px";
-  });
-
-  let SwitchPopup = false;
-  let popUp;
-
-  user.addEventListener("click", () => {
-    
-    if (!SwitchPopup) {
-      popUp = document.createElement("div");
-      popUp.style.display = "block"; // Asegúrate de que el popup se muestre al crearlo
-      SwitchPopup = true;
-      // Aquí añades el contenido del popup al elemento popUp
-      // ...
-      // Luego lo añades al DOM, algo así como:
-      // document.body.appendChild(popUp);
-    } else {
-      // Aquí ocultas el popup y restableces la variable SwitchPopup
-      popUp.style.display = "none";
-      SwitchPopup = false;
-    }
-    popUp.className = styles.backgroundOpacity;
-    popUp.innerHTML = `
-      <div class = "${style.backgroundOpacity}">
-        <form id="loginForm" class="${style.form}">
-          <h2 class ="${style.Login}">Login</h2>
-          <label for="email" class="${style.label}">Email:</label>
-          <input type="text" id="email" name="email" autocomplete="email" class="${style["input-email"]}">
-          <label for="password" class="${style.label}">Password:</label>
-          <input type="password" id="password" name="password" autocomplete="current-password" class="${style["input-password"]}">
-          <button type="submit" class="${style["button-send"]}">Login</button>
-        </form>
-        <div class="${style.divRight}">
-          <h2>Still do not have an account?</h2>
-          <p>Register so you can login</p>
-          <button class= "${style.registerBtn}" id="profile-register-btn">Register</button>
-        </div>
-      </div>
-      `;
-
-    // let profileRegisterBtn = document.getElementById("profile-register-btn");
-    // profileRegisterBtn.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   navigateTo("/register");
-    // });
-
-    root.appendChild(popUp);
-    const form = document.getElementById("loginForm");
-    form.addEventListener("submit", async (event) => {
-      event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-
-      if (!formValidator(email, password)) {
-        alert("Please fill in all fields");
-        return;
-      }
-      const token = await login(email, password);
-      if (token) {
-        localStorage.setItem("token", token);
-        navigateTo("/dashboard");
-      } else {
-        alert("Invalid credentials");
-      }
+    about.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/about-us");
     });
-  });
+
+    // Calcula la posición vertical de la sección "About Us"
+    let aboutSectionPosition = aboutSection.offsetTop;
+
+    window.addEventListener("scroll", () => {
+      let value = window.scrollY;
+
+      if (value < 114) {
+        // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
+        header.style.backgroundColor = "transparent";
+        carrito.style.backgroundColor = "transparent";
+        user.style.backgroundColor = "transparent";
+        input.style.border = "none";
+      } else {
+        // Aplicar estilos cuando el usuario ha pasado cierta posición
+        header.style.backgroundColor = "#f9f9f9";
+        carrito.style.backgroundColor = "#298172";
+        user.style.backgroundColor = "#298172";
+        carrito.style.padding = "5px";
+        user.style.padding = "5px";
+        carrito.style.borderRadius = "50px";
+        user.style.borderRadius = "50px";
+        input.style.border = "2px solid #298172";
+      }
+
+      // Detener animaciones cuando el usuario alcanza la sección "About Us"
+      if (value >= aboutSectionPosition) {
+        return; // No hagas nada más si el usuario ha alcanzado la sección "About Us"
+      }
+
+      // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
+      text.style.marginTop = value * 2.5 + "px";
+      leaf.style.left = value * 1.5 + "px";
+      leaf.style.top = value * -1.5 + "px";
+      hill1.style.top = value * 1 + "px";
+      hill4.style.left = value * -1 + "px";
+      hill5.style.left = value * 1 + "px";
+    });
+  };
+
+
+  return {
+    pageContent,
+    logic,
+  };
 }

@@ -1,6 +1,5 @@
 import { navigateTo } from '../../../../../Router.js';
 import { formValidator } from '../../../../../helpers/index.js';
-import style from './login-form.css';
 
 export async function LoginFormComponent() {
   const root = document.getElementById('root');
