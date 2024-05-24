@@ -11,6 +11,7 @@ import { GameScene } from "../scenes/private/games/games";
 import { ProfileScene } from "../scenes/private/profile/profile";
 import { HomePagePublic } from "../scenes/public/homePublic";
 import { AboutUsPage } from "../scenes/public/about-us";
+import { Service } from "../scenes/public/services/service";
 
 export const routes = {
   private: [
@@ -29,6 +30,8 @@ export const routes = {
     { path: "/profile", component: ProfileScene },
     { path: "/home-page", component: HomePagePublic },
     { path: "/about-us", component: AboutUsPage },
+    { path: "/services", component: Service},
+
   ],
 };
 
