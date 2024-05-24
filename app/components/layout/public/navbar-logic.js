@@ -10,16 +10,12 @@ export function logicNav(){
 
   const carrito = document.getElementById('carrito');
   const elemetos1 = document.getElementById('lista_1');
-  const elemetos2 = document.getElementById('lista-2');
-  const elemetos3 = document.getElementById('lista-3');
   const lista = document.querySelector('#lista-carrito div');
   const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
   
-  cargarEventListeners();
+  
   function cargarEventListeners(){
       elemetos1.addEventListener('click', comprarElemento);
-      elemetos2.addEventListener('click', comprarElemento);
-      elemetos3.addEventListener('click', comprarElemento);
       carrito.addEventListener('click', eliminarElemnto);
       vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
       
@@ -50,16 +46,16 @@ export function logicNav(){
       const row = document.createElement('div');
       row.classList.add('productoencarrito');
       row.innerHTML = `
-          <div clas="img_product_carrito">
+          <div clas="${style.img_product_carrito}">
               <img src="${elemento.imagen}" width=100>
           </div>
-          <div class="info_product_carrito">
-              <div class="text_product_carrito">
+          <div class="${style.info_product_carrito}">
+              <div class="${style.text_product_carrito}">
                   <p>${elemento.titulo}</p>
                   <p>${elemento.precio}</p>
               </div>
               <div>
-                  <a herf="#" class="eliminado" data-id="${elemento.id}">
+                  <a herf="#" class="${style.eliminados}" width=100 height=100 data-id="${elemento.id}">
               </div>
           </div>
       `;
@@ -145,5 +141,5 @@ export function logicNav(){
   });
   
   
-  
+  cargarEventListeners();
 }

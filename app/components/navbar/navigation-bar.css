@@ -132,7 +132,7 @@ a.active {
   justify-content: space-between;
 }
 
-.eliminado{
+.eliminados{
   width: 50%;
   height: 30%;
   border-radius: 20px;
@@ -188,4 +188,5 @@ a.active {
 
 .btn_3:hover{
   background-color: var(--primary-color);
+  
 }

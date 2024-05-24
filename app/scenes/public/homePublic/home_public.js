@@ -92,12 +92,11 @@ export function HomePagePublic(params) {
                 </div>
               </div>
               <div class="${styles.card_prodct}">
-                <img src="${cepillo}" alt="">
-                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
+                <img src="${cepillo}" alt=""> 
+                <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                 <div class="${styles.producct_info}">
-                <h3>Lorem, ipsum dolor.</h3>
                 <p class="precio" >12212</p>
-                  <button class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</button>
+                  <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                 </div>
               </div>
             </div>
