@@ -22,6 +22,7 @@ import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/i
 import person_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg';
+import { navigateTo } from "../../../Router";
 export async function HomePagePublic(){
     const root = document.getElementById('root');
     
@@ -140,7 +141,7 @@ export async function HomePagePublic(){
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}"id="verMas">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -148,7 +149,7 @@ export async function HomePagePublic(){
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}"id="verMas1">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -156,7 +157,7 @@ export async function HomePagePublic(){
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum</p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}"id="verMas2">Read More</a>
                 </div>
             </div>
         </section>
@@ -199,10 +200,28 @@ export async function HomePagePublic(){
     let carrito = document.getElementById("carrito");
     let input = document.getElementById("input_1");
     let aboutSection = document.getElementById("about_secion");
+    let SeeMore = document.getElementById("verMas");
+    let SeeMore1 = document.getElementById("verMas1");
+    let SeeMore2 = document.getElementById("verMas2");
     
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
     
+    SeeMore1.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
+    });
+  
+    SeeMore2.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
+    });
+  
+    SeeMore.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
+    });
+
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
       
