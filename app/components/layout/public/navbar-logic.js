@@ -1,17 +1,27 @@
 import style from './navbar-logic.css'
 import styles from '../../../scenes/public/homePublic/style.css'
+import { navigateTo } from '../../../Router';
+
 
 export function logicNav(){
-  console.log('hdsaads')
+  
   let user = document.getElementById("user");
   let SwitchPopup = false;
   let popUp;
+  let servicePage = document.getElementById('service');
+
+    servicePage.addEventListener('click', (evento) => {
+      evento.preventDefault();
+      navigateTo('/services');
+    });
+
 
 
   const carrito = document.getElementById('carrito');
   const elemetos1 = document.getElementById('lista_1');
   const lista = document.querySelector('#lista-carrito div');
   const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
+  
   
   
   function cargarEventListeners(){

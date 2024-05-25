@@ -17,7 +17,7 @@ export function NavigationBar() {
         <nav class="${styles.navigation}">
             <a href="#" class="${styles.active}">Home</a>
             <a href="#" id="about">About</a>
-            <a href="#">Service</a>
+            <a href="#" id ="service">Service</a>
             <a href="#">Contact</a>
         </nav>
       <!-- header buscar, carrito y login -->

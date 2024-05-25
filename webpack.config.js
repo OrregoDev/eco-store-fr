@@ -21,6 +21,11 @@ module.exports = {
         }
       },
       {
+        test: /\.js$/,
+        enforce: "pre",
+        use: ["source-map-loader"],
+      },
+      {
         test: /\.css$/, // Expresión regular para identificar los archivos css
         use: [ // Loader a utilizar
           MiniCssExtractPlugin.loader, // Extrae el css a un archivo independiente
