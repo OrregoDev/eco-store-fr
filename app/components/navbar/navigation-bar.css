@@ -115,9 +115,7 @@ a.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
 }
-
 .productoencarrito{
   width: 100%;
   height: 100%;
