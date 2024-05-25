@@ -44,20 +44,22 @@ export function logicNav(){
   
   function insertarCarrito(elemento){
       const row = document.createElement('div');
-      row.classList.add('productoencarrito');
       row.innerHTML = `
-          <div clas="${style.img_product_carrito}">
-              <img src="${elemento.imagen}" width=100>
+        <div class="${style.producto_carrito}">
+          <div class="${style.producto_carrito_img_text}">
+            <div class="${style.img_product_carrito}">
+                <img src="${elemento.imagen}" width=100>
+            </div>
+            <div class="${style.info_product_carrito}">
+                <div class="${style.text_product_carrito} ">
+                    <p>${elemento.titulo}</p>
+                    <p>Precio: $${elemento.precio}</p>
+                      
+                </div>
+            </div>
           </div>
-          <div class="${style.info_product_carrito}">
-              <div class="${style.text_product_carrito}">
-                  <p>${elemento.titulo}</p>
-                  <p>${elemento.precio}</p>
-              </div>
-              <div>
-                  <a herf="#" class="${style.eliminados}" width=100 height=100 data-id="${elemento.id}">
-              </div>
-          </div>
+          <a herf="#" class="borrar ${style.eliminados}" data-id="${elemento.id}">Eliminar</a>
+        </div>  
       `;
       console.log(row);
       lista.appendChild(row);
@@ -65,13 +67,13 @@ export function logicNav(){
   
   
   function eliminarElemnto(e){
-      let elemento,elementof;
-      if(e.target.classList.contains('eliminado')){
-          e.target.parentElement.parentElement.remove();
-          elemento = e.target.parentElement.parentElement;
-          elementof = elemento.querySelector('a').getAttribute('data-id');
-      }
-  }
+    let elemento,elementoId;
+    if(e.target.classList.contains('borrar')){
+        e.target.parentElement.parentElement.remove();
+        elemento = e.target.parentElement.parentElement;
+        elementoId = elemento.querySelector('a').getAttribute('data-id');
+    }
+}
   
   function vaciarCarrito() {
       while(lista.firstChild){
