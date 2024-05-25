@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import styles from "./style.css";
 import hill from "../../../assets/img/hill1.png";
 import hill2 from "../../../assets/img/hill2.png";
@@ -20,65 +19,6 @@ import whastp from "../../../assets/img/whastp.png";
 import youtube from "../../../assets/img/youtube.png";
 import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-=======
-import styles from './style.css';
-import hill from '../../../assets/img/hill1.png';
-import hill2 from '../../../assets/img/hill2.png';
-import hill3 from '../../../assets/img/hill3.png';
-import hill_4 from '../../../assets/img/hill4.png';
-import hill_5 from '../../../assets/img/hill5.png';
-import facebook from '../../../assets/img/facebook.png';
-import casa from '../../../assets/img/casa.png';
-import comida from '../../../assets/img/comida.png';
-import hojaM from '../../../assets/img/hojaM.png';
-import cepillo from '../../../assets/img/cepillo.png';
-import papel from '../../../assets/img/papel.png';
-import leaff from '../../../assets/img/leaf.png';
-import logo from '../../../assets/img/logo.png';
-import plant from '../../../assets/img/plant.png';
-import tree from '../../../assets/img/tree.png';
-import imagenAbout from '../../../assets/img/imagenAbout.png';
-import whastp from '../../../assets/img/whastp.png';
-import youtube from '../../../assets/img/youtube.png';
-import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import person_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import { Service } from '../services/service';
-import { navigateTo } from '../../../Router';
-export async function HomePagePublic(){
-    const root = document.getElementById('root');
-    
-    root.innerHTML = `
-    <div ${styles.cuerpo}> 
-    <!-- header  -->
-    <header class="${styles.header}" id="head">
-      <!--header logo -->
-        <div class="${styles.logo}">
-          <img src="${logo}" alt="">
-        </div>
-      <!--header opciones -->
-        <nav class="${styles.navigation}">
-            <a href="#" class="${styles.active}">Home</a>
-            <a href="#">About</a>
-            <a href="#" id="service" >Service</a>
-            <a href="#">Contact</a>
-        </nav>
-      <!-- header buscar, carrito y login -->
-      <div class="${styles.nav_active}">
-        <form action="" method="" class="${styles.search}" >
-            <input type="text" name="q" class="${styles.search_input}" id="input_1" placeholder="Buscar...">
-            <img src="${search_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-        </form>
-        <div class="${styles.icon}" id="carrito">
-          <img src="${shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24}"  alt="">
-        </div>
-        <div class="${styles.icon}" id="user">
-          <img src="${person_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-        </div>
-      </div>
->>>>>>> origin/main
 
 import { login } from "../login/components/form";
 import { formValidator } from "../../../helpers";
@@ -237,25 +177,13 @@ export function HomePagePublic(params) {
     let about = document.getElementById("about");
 
     about.addEventListener("click", (evento) => {
-      evento.preventDefault();
-      navigateTo("/about-us");
+        evento.preventDefault();
+        navigateTo("/about-us");
     });
 
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
 
-<<<<<<< HEAD
-=======
-    let servicePage = document.getElementById('service');
-
-    servicePage.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      navigateTo('/services');
-    });
-
-
-    
->>>>>>> origin/main
     window.addEventListener("scroll", () => {
       let value = window.scrollY;
 
