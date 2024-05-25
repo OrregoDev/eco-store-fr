@@ -19,9 +19,6 @@ import whastp from "../../../assets/img/whastp.png";
 import youtube from "../../../assets/img/youtube.png";
 import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
 import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-
-import { login } from "../login/components/form";
-import { formValidator } from "../../../helpers";
 import { navigateTo } from "../../../Router";
 
 export function HomePagePublic(params) {
@@ -63,7 +60,7 @@ export function HomePagePublic(params) {
           </div>
         </section>
         <!-- seccion de productos -->
-        <section class="${styles.product}">
+        <section class="${styles.products}">
           <h2 class="${styles.about_title}">Products</h2>
           <div class="${styles.category}">
             <button><img src="${hojaM}" alt=""></button>
@@ -73,38 +70,209 @@ export function HomePagePublic(params) {
           </div>
           <p class="${styles.text_product_top}">Top select</p>
           <div class="${styles.top_product}">
-            <img class="${styles.arrow}" src=".${arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-            <div class="${styles.card}">
-              <div class="${styles.card_prodct}">
-                <img src="${cepillo}" alt="">
-                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
-                <div class="${styles.producct_info}">
-                  <p>Lorem, ipsum dolor.</p>
-                  <button class="${styles.btn2}">Add to cart</button>
-                </div>
-              </div>
-              <div class="${styles.card_prodct}">
-                <img src="${cepillo}" alt="">
-                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
-                <div class="${styles.producct_info}">
-                  <p>Lorem, ipsum dolor.</p>
-                  <button class="${styles.btn2}">Add to cart</button>
-                </div>
-              </div>
-              <div class="${styles.card_prodct}">
-                <img src="${cepillo}" alt="">
-                <p class="${styles.title_product}">Cepillo de dientes de bamboo</p>
-                <div class="${styles.producct_info}">
-                  <p>Lorem, ipsum dolor.</p>
-                  <button class="${styles.btn2}">Add to cart</button>
-                </div>
-              </div>
+            <div class="${styles.arrows} left" id="left">
+              <img class="${styles.arrow}" src="${arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
             </div>
-
-            
-
-            
-            <img class="${styles.arrow}" src="${arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
+            <div class="${styles.cards}">
+              <div class="${styles.slider} slider" id="lista_1">
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="${styles.product} product" id="productos">
+                  <div class="${styles.card}">
+                    <div class="${styles.card_prodct}">
+                      <img src="${cepillo}" alt=""> 
+                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
+                      <div class="${styles.producct_info}">
+                        <p class="${styles.precio} precio" >12212</p>
+                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            <div class="${styles.arrows} right" id="right">
+              <img class="${styles.arrow}" src="${arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
+            </div> 
           </div>
         </section>
         <section class="${styles.artles}">
@@ -180,6 +348,45 @@ export function HomePagePublic(params) {
         evento.preventDefault();
         navigateTo("/about-us");
     });
+
+    const products = document.querySelectorAll(".slider .product");
+
+    let arrowleft = document.getElementById("left")
+    let arrowrigth = document.getElementById("right")
+
+    arrowleft.addEventListener("click", () => {
+      left()
+    });
+
+    arrowrigth.addEventListener("click", () => {
+      right()
+    });
+
+    let counter = 0;
+    function left() {
+      console.log("hola desde arrow function left")
+      if (counter === 0) {
+        counter = products.length / 3 - 1;
+      } else {
+        counter--;
+      }
+      scroll();
+    }
+
+    function right() {
+      if (counter === products.length / 3 - 1) {
+        counter = 0;
+      } else {
+        counter++;
+      }
+      scroll();
+    }
+
+    function scroll() {
+      products.forEach((item) => {
+        item.style.transform = `translateX(-${counter * 84}vw)`;
+      });
+    }
 
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;

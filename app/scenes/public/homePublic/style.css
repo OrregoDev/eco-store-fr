@@ -249,7 +249,20 @@ main{
   align-self: self-start;
   margin-top: 2%;
 }
-.product{
+.slider {
+  overflow: hidden;
+  display: flex;
+  padding: 60px 40px;
+  position: relative;
+  gap: 50px;
+}
+
+.slider .product {
+  transition: 0.5s;
+}
+
+.products{
+  height: 130vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -257,7 +270,7 @@ main{
   background-color: #f9f9f9; 
 }
 
-.product h2{
+.products h2{
   text-align: center;
   width: 30%;
   color: #003329;
@@ -294,37 +307,40 @@ main{
 }
 
 .top_product{
+  width: 90vw;
   display: flex;
-  background-color: #f9f9f9;
-  width: 100%;
-  height: 50vh;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 150px;
-  margin-top: 20px;
+  height: 60vh;
+}
+
+.arrows img{
+  width: 254px;
+  height: 54px;
 }
 
 .arrow img{
   width: 54px;
   height: 54px;
+
 }
 
 .card{
-  background: var(--primary-color);
-  width: 18%;
-  height: 70%;
-  border-radius: 40px;
   position: relative;
+  width: 312.96px;
+  height: 350px;
+  border-radius: 40px;
+  background-color: #298172;
 }
 
 .card_prodct{
   position: absolute;
-  background-color: #003329;
-  border-radius: 40px;
-  width: 100%;
-  height: 100%; 
   top: -10px;
   left: -10px;
+  background-color: #003329;
+  border-radius: 40px;
+  width: 312.96px;
+  height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,6 +351,8 @@ main{
   width: 80%;
   border-radius: 40px;
   margin-top: 10px;
+  object-fit: cover;
+  object-position: center;
 }
 .title_product{
   color: #f9f9f9;
@@ -356,12 +374,21 @@ main{
 }
 
 .btn2{
-  background-color: var(--primary-color);
+  background-color: #298172;
   border: none;
   padding: 5px 10px;
   color: #f9f9f9;
   border-radius: 40px;
   font-weight: 700;
+}
+
+.cards{
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  gap: 50px;
+  align-items: center;
+  overflow: hidden;
 }
 
 .artles{
