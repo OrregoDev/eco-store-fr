@@ -24,7 +24,7 @@ import { navigateTo } from "../../../Router";
 export function HomePagePublic(params) {
 
   const pageContent = `
-    <div ${styles.cuerpo}> 
+    <div ${styles.cuerpo} id="cliff"> 
     <!-- fondo de montañas -->
     <section class="${styles.parallax}">
         <img src="${hill}" id="hill1" alt="">
@@ -60,7 +60,7 @@ export function HomePagePublic(params) {
           </div>
         </section>
         <!-- seccion de productos -->
-        <section class="${styles.products}">
+        <section class="${styles.products}" >
           <h2 class="${styles.about_title}">Products</h2>
           <div class="${styles.category}">
             <button><img src="${hojaM}" alt=""></button>
@@ -303,7 +303,7 @@ export function HomePagePublic(params) {
         </section>
 
     </main>
-    <footer class="${styles.pie_pagina}">
+    <footer class="${styles.pie_pagina}" id="footer">
       <img class="${styles.logo}" src="${logo}" alt="img">
       <div class="${styles.contact}">
         <h2>Contacto</h2>

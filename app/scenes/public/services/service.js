@@ -1,39 +1,14 @@
-import styles from './style.css';
-import favicon from '../../../assets/img/favicon.png'
-import logo from '../../../assets/img/favicon.png';
-import vegetales from '../../../assets/img/vegetales.jpg'
-import graficas from '../../../assets/img/graficas.jpg';
-import belleza from '../../../assets/img/belleza.png';
-import cuidado from '../../../assets/img/cuidado.png';
-import hogar from '../../../assets/img/hogar.png';
+import styles from "./style.css";
+import favicon from "../../../assets/img/favicon.png";
+import logo from "../../../assets/img/favicon.png";
+import vegetales from "../../../assets/img/vegetales.jpg";
+import graficas from "../../../assets/img/graficas.jpg";
+import belleza from "../../../assets/img/belleza.png";
+import cuidado from "../../../assets/img/cuidado.png";
+import hogar from "../../../assets/img/hogar.png";
+import { navigateTo } from "../../../Router";
 export function Service() {
-    let root = document.getElementById('root');
-    root.innerHTML = `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="icon" href="${favicon}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <title>Services</title>
-    </head>
-    <body>
-        <header class="${styles.header}">
-            <div class="${styles.logo}"><img src="${logo}" alt="" class="${styles.dimensions}"></div>
-            <nav class="${styles.nav}">
-                <ul>
-                    <li>
-                        <a href="">Home</a>
-                        <a href="">About</a>
-                        <a href="">Service</a>
-                        <a href="">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+  const pageContent = `
         <main>
         <h1>Services</h1>
         <h2>Embracing Sustainability for a Better Future</h2>
@@ -71,4 +46,94 @@ export function Service() {
         
     </body>
     </html>`;
-  }
+
+  const logic = () => {
+    let user = document.getElementById("user");
+    let SwitchPopup = false;
+    let popUp;
+    let servicePage = document.getElementById("service");
+    let homePage = document.getElementById("home");
+    let contactFooter = document.getElementById("contact");
+
+    contactFooter.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/home-page");
+      window.location.href = "#footer";
+    });
+    homePage.addEventListener("click", (evento) => {
+      evento.preventDefault();
+
+      navigateTo("/home-page");
+    });
+
+    servicePage.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/services");
+    });
+
+    user.addEventListener("click", () => {
+      if (!SwitchPopup) {
+        popUp = document.createElement("div");
+        popUp.style.display = "block"; // Asegúrate de que el popup se muestre al crearlo
+        SwitchPopup = true;
+        // Aquí añades el contenido del popup al elemento popUp
+        // ...
+        // Luego lo añades al DOM, algo así como:
+        // document.body.appendChild(popUp);
+      } else {
+        // Aquí ocultas el popup y restableces la variable SwitchPopup
+        popUp.style.display = "none";
+        SwitchPopup = false;
+      }
+      popUp.className = styles.backgroundOpacity;
+      popUp.innerHTML = `
+      <div class = "${style.backgroundOpacity}">
+        <form id="loginForm" class="${style.form}">
+          <h2 class ="${style.Login}">Login</h2>
+          <label for="email" class="${style.label}">Email:</label>
+          <input type="text" id="email" name="email" autocomplete="email" class="${style["input-email"]}">
+          <label for="password" class="${style.label}">Password:</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" class="${style["input-password"]}">
+          <button type="submit" class="${style["button-send"]}">Login</button>
+        </form>
+        <div class="${style.divRight}">
+          <h2>Still do not have an account?</h2>
+          <p>Register so you can login</p>
+          <button class= "${style.registerBtn}" id="profile-register-btn">Register</button>
+        </div>
+      </div>
+      `;
+
+      // let profileRegisterBtn = document.getElementById("profile-register-btn");
+      // profileRegisterBtn.addEventListener("click", (event) => {
+      //   event.preventDefault();
+      //   navigateTo("/register");
+      // });
+
+      root.appendChild(popUp);
+      const form = document.getElementById("loginForm");
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if (!formValidator(email, password)) {
+          alert("Please fill in all fields");
+          return;
+        }
+        const token = await login(email, password);
+        if (token) {
+          localStorage.setItem("token", token);
+          navigateTo("/dashboard");
+        } else {
+          alert("Invalid credentials");
+        }
+      });
+    });
+  };
+
+  return {
+    pageContent,
+    logic,
+  };
+}
