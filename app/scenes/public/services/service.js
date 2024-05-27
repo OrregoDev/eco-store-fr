@@ -30,15 +30,15 @@ export function Service() {
             <div class="${styles.container}">
                 <div class="${styles.products}">
                     <div class="${styles.imgProduct}"><img src="${belleza}" alt="" class="${styles.belleza}"></div>
-                    <div class="${styles.descriptionProduct}"><button class="${styles.button}">See more</button></div>
+                    <div class="${styles.descriptionProduct}"><p>Tenemos los mejores productos para ti: </p><button class="${styles.button}">See more</button></div>
                 </div>
                 <div class="${styles.products}">
                     <div class="${styles.imgProduct}"><img src="${cuidado}" alt="" class="${styles.cuidado}"></div>
-                    <div class="${styles.descriptionProduct}"><button class="${styles.button}">See more</button></div>
+                    <div class="${styles.descriptionProduct}"><p>Tenemos los mejores productos para ti: </p><button class="${styles.button}">See more</button></div>
                 </div>
                 <div class="${styles.products}">
                     <div class="${styles.imgProduct}"><img src="${hogar}" alt="" class="${styles.hogar}"></div>
-                    <div class="${styles.descriptionProduct}"><button class="${styles.button}">See more</button></div>
+                    <div class="${styles.descriptionProduct}"><p>Tenemos los mejores productos para ti: </p></p><button class="${styles.button}">See more</button></div>
                 </div>
             </div>
         </main>
