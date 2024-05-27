@@ -1,0 +1,52 @@
+A continuación dejo los links de las diferentes imagenes en pixabay:
+
+Aseo personal
+
+cepilloJabonEco: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Aseo%20Personal/cepilloJabonEco.jpg
+cepillosEco: https://cdn.pixabay.com/photo/2024/05/22/19/55/brush-8781563_960_720.jpg
+cepilloEcoVerde: https://cdn.pixabay.com/photo/2024/05/22/19/55/brush-8781561_960_720.jpg
+cepilloVerde: https://cdn.pixabay.com/photo/2024/05/22/19/53/brush-8781559_960_720.jpg
+comesticoEco: https://cdn.pixabay.com/photo/2024/05/22/19/57/brush-8781570_960_720.jpg
+coposEco: https://cdn.pixabay.com/photo/2024/05/22/19/56/brush-8781566_960_720.jpg
+jabonEco: https://cdn.pixabay.com/photo/2024/05/22/19/59/brush-8781573_960_720.jpg
+limpiador: https://cdn.pixabay.com/photo/2024/05/22/19/58/brush-8781572_960_720.jpg
+peinilla: https://cdn.pixabay.com/photo/2024/05/22/20/01/brush-8781575_960_720.jpg
+tamponesEco: https://cdn.pixabay.com/photo/2024/05/22/20/00/brush-8781574_960_720.jpg
+
+Productos Hogar
+
+cosmetiquera: https://cdn.pixabay.com/photo/2024/05/23/01/45/decoration-8782043_960_720.png
+cubiertos: https://cdn.pixabay.com/photo/2024/05/23/01/45/decoration-8782042_960_720.png
+cubiertosEco:https: //cdn.pixabay.com/photo/2024/05/23/01/45/decoration-8782041_960_720.png
+decoracion: https://cdn.pixabay.com/photo/2024/05/23/01/33/decoration-8782025_960_720.png
+ganchos: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20Hogar/ganchos.jpg
+hogarEco: https://cdn.pixabay.com/photo/2024/05/23/01/44/decoration-8782039_960_720.png
+lavadoresECo: https://cdn.pixabay.com/photo/2024/05/23/01/45/decoration-8782040_960_720.png
+limpiadoresEco: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20Hogar/limpiadoresEco.jpg
+
+
+Productos Alimenticios
+
+almendras: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20alimenticios/almendras.png
+avena: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20alimenticios/avena.png
+batidoEco: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20alimenticios/batidoEco.png
+cereales: https://cdn.pixabay.com/photo/2024/05/23/01/03/almonds-8781993_960_720.png
+chia: https://cdn.pixabay.com/photo/2024/05/23/01/06/almonds-8781994_960_720.png
+hamburguesas: https://cdn.pixabay.com/photo/2024/05/23/00/47/almonds-8781986_960_720.png
+proteina: https://cdn.pixabay.com/photo/2024/05/23/01/00/almonds-8781991_960_720.png
+semillasGira: https://cdn.pixabay.com/photo/2024/05/23/01/20/almonds-8782021_960_720.png
+snack: https://pixabay.com/es/photos/almendras-vegano-ecologico-organico-8781981/
+yogurt: https://cdn.pixabay.com/photo/2024/05/23/00/56/almonds-8781989_960_720.png
+
+Productos cannabicos
+
+aceite: https://github.com/WFaguirre/ecostoreimg/blob/main/Productos%20cannabicos/aceite.jpg?raw=true
+cremaMari: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20cannabicos/cremaMari.jpg
+gatoMari: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20cannabicos/gatoMari.png
+jabonMari: https://raw.githubusercontent.com/WFaguirre/ecostoreimg/main/Productos%20cannabicos/jabonMari.jpg	
+
+
+
+
+
+
