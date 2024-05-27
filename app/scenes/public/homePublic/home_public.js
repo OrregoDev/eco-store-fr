@@ -81,7 +81,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -93,7 +93,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -117,7 +117,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -129,7 +129,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -141,7 +141,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -153,7 +153,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -165,7 +165,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -177,7 +177,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -189,7 +189,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -201,7 +201,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -213,7 +213,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -225,7 +225,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -237,7 +237,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -249,7 +249,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>
@@ -261,7 +261,7 @@ export function HomePagePublic(params) {
                       <img src="${cepillo}" alt=""> 
                       <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
                       <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >12212</p>
+                        <p class="${styles.precio} precio" >$ 12.212</p>
                         <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
                       </div>
                     </div>

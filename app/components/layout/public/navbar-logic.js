@@ -1,6 +1,7 @@
 import style from "./navbar-logic.css";
 import styles from "../../../scenes/public/homePublic/style.css";
 import { navigateTo } from "../../../Router";
+import { formValidator } from "../../../helpers";
 
 export function logicNav() {
   
