@@ -323,7 +323,7 @@ export function HomePagePublic(params) {
         </ul>
         <div class="${styles.Socials}">
           <h2>Redes Sociales</h2>
-          <img src="${facebook}" alt="icon"><img src="${whastp}" alt="icon"><img src="${youtube}" alt="icon">
+          <a href="https://www.facebook.com/?locale=es_LA"><img src="${facebook}" alt="icon"></a><a href="https://www.whatsapp.com/?lang=es_LA"><img src="${whastp}" alt="icon"></a><a href="https://www.youtube.com/"><img src="${youtube}" alt="icon"></a>
           <!-- en caso de tener que cambiar el color, se usa boxicons -->
         </div>
       </div>
