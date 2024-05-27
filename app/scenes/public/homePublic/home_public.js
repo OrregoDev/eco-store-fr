@@ -281,7 +281,7 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}" id="verMas">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -289,7 +289,7 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}" id="verMas1">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -297,7 +297,7 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum</p>
-                    <a href="" class="${styles.btn3}">Read More</a>
+                    <a href="" class="${styles.btn3}" id="verMas2">Read More</a>
                 </div>
             </div>
         </section>
@@ -343,10 +343,28 @@ export function HomePagePublic(params) {
     let input = document.getElementById("input_1");
     let aboutSection = document.getElementById("about_secion");
     let about = document.getElementById("about");
+    let SeeMore = document.getElementById("verMas");
+    let SeeMore1 = document.getElementById("verMas1");
+    let SeeMore2 = document.getElementById("verMas2");
 
     about.addEventListener("click", (evento) => {
         evento.preventDefault();
         navigateTo("/about-us");
+    });
+
+    SeeMore1.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
+    });
+  
+    SeeMore2.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
+    });
+  
+    SeeMore.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      navigateTo("/blog");
     });
 
     const products = document.querySelectorAll(".slider .product");

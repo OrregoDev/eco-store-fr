@@ -12,6 +12,7 @@ import { ProfileScene } from "../scenes/private/profile/profile";
 import { HomePagePublic } from "../scenes/public/homePublic";
 import { AboutUsPage } from "../scenes/public/about-us";
 import { Service } from "../scenes/public/services/service";
+import { Blogs } from '../scenes/public/blog';
 
 export const routes = {
   private: [
@@ -31,6 +32,7 @@ export const routes = {
     { path: "/home-page", component: HomePagePublic },
     { path: "/about-us", component: AboutUsPage },
     { path: "/services", component: Service},
+    { path: "/blog", component: Blogs },
 
   ],
 };
