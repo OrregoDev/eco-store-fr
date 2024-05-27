@@ -11,8 +11,8 @@ async function verifyToken(token) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
-      }
+        Authorization: `Bearer ${token}`,
+      },
     });
 
     if (!response.ok) {
@@ -31,16 +31,12 @@ async function verifyToken(token) {
 // Navegar a una nueva ruta
 export function navigateTo(path) {
   window.history.pushState({}, '', window.location.origin + path);
-  const publicRoute = routes.public.find((r) => r.path === path);
-  const params = new URLSearchParams(window.location.search)
-  const {pageContent, logic} = publicRoute.component(params)
-  DashboardLayoutPublic(pageContent,logic);
+  Router();
 }
 
 // Verificar la autenticación y redirigir
 async function checkAuth(path, params) {
   const token = localStorage.getItem('token');
-
   if (token) {
     const [isValid] = await verifyToken(token);
     if (isValid) {
@@ -55,7 +51,7 @@ async function checkAuth(path, params) {
       if (privateRoute) {
         // hace la peticion al backend.
         const { pageContent, logic } = privateRoute.component(params);
-        DashboardLayout(pageContent, logic)
+        DashboardLayout(pageContent, logic);
         return;
       } else {
         navigateTo('/dashboard'); // Redirigir a dashboard si la ruta privada no existe
@@ -74,7 +70,7 @@ async function checkAuth(path, params) {
 export async function Router() {
   const path = window.location.pathname; // /home-page
   const params = new URLSearchParams(window.location.search);
-  
+
   // Verificar autenticación antes de decidir qué componente mostrar
   if (path === '/home-page') {
     const token = localStorage.getItem('token');
@@ -92,9 +88,10 @@ export async function Router() {
   const privateRoute = routes.private.find((r) => r.path === path);
 
   if (publicRoute) {
-    const params = new URLSearchParams(window.location.search)
-    const {pageContent, logic} = publicRoute.component(params)
-    DashboardLayoutPublic(pageContent,logic);
+    const params = new URLSearchParams(window.location.search);
+    console.log({ publicRoute });
+    const { pageContent, logic } = publicRoute.component(params);
+    DashboardLayoutPublic(pageContent, logic);
   } else if (privateRoute) {
     checkAuth(path, params);
   } else {

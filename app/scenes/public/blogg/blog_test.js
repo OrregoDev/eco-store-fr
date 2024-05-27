@@ -1,22 +1,17 @@
-import styles from "./styles.css";
-import logo from "../../../assets/img/logo.png";
-import person_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import search_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import whatsapp from "../../../assets/img/whastp.png";
-import youtube from "../../../assets/img/youtube.png";
-import facebook from "../../../assets/img/facebook.png";
-import cannabis from "../../../assets/img/metal-grinder-weed-canabis-oil-joint-posing.jpg";
-import vegan from "../../../assets/img/eco-friendly-disposable-tableware-concept-saving-planet-rejection-plastic.jpg";
-import mascarilla from "../../../assets/img/top-view-woman-relaxing-with-face-mask.jpg";
-import ensalada from "../../../assets/img/plates-with-assorted-salads.jpg";
+import styles from './styles.css';
+import logo from '../../../assets/img/logo.png';
+import whatsapp from '../../../assets/img/whastp.png';
+import youtube from '../../../assets/img/youtube.png';
+import facebook from '../../../assets/img/facebook.png';
+import cannabis from '../../../assets/img/metal-grinder-weed-canabis-oil-joint-posing.jpg';
+import vegan from '../../../assets/img/eco-friendly-disposable-tableware-concept-saving-planet-rejection-plastic.jpg';
+import mascarilla from '../../../assets/img/top-view-woman-relaxing-with-face-mask.jpg';
+import ensalada from '../../../assets/img/plates-with-assorted-salads.jpg';
 
+export function Blogs() {
+  console.log('hola');
 
-export async function Blogs() {
-
-    console.log("hola");
-
-const pageContent = `
+  const pageContent = `
 <div ${styles.cuerpo}> 
     <main>
         <section class="${styles.section_blog}">
@@ -121,14 +116,12 @@ const pageContent = `
 </div>
 `;
 
-const logic = () => {
-    console.log("holaaaaaaa")
-}
+  const logic = () => {
+    console.log('holaaaaaaa');
+  };
 
-
-return {
+  return {
     pageContent,
-    logic
-};
-
+    logic,
+  };
 }

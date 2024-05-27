@@ -1,32 +1,33 @@
 // webpack.config.js
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin"),
-  MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: "./app/index.js", // Archivo de entrada de la aplicación
+  entry: './app/index.js', // Archivo de entrada de la aplicación
   output: {
     // Configuración de salida, o sea, donde se guardará el bundle
-    path: path.resolve(__dirname, "bundle"), // Directorio de salida
-    filename: "bundle.js", // Nombre del archivo de salida
-    publicPath: "/", // Ruta relativa para los recursos
+    path: path.resolve(__dirname, 'bundle'), // Directorio de salida
+    filename: 'bundle.js', // Nombre del archivo de salida
+    publicPath: '/', // Ruta relativa para los recursos
     clean: true, // Limpia el directorio de salida antes de generar el bundle
   },
+  devtool: 'source-map',
   module: {
     // Configuración de los módulos, los modulos son: loaders, rules, etc.
     rules: [
       // Reglas para los módulos
       {
         test: /\.js$/,
-        enforce: "pre",
-        use: ["source-map-loader"],
+        enforce: 'pre',
+        use: ['source-map-loader'],
       },
       {
         test: /\.js$/, // Expresión regular para identificar los archivos js
         exclude: /node_modules/, // Excluye la carpeta node_modules
         use: {
           // Loader a utilizar
-          loader: "babel-loader", // Babel loader, recordemos que babel transforma el código js moderno a js compatible con navegadores antiguos
+          loader: 'babel-loader', // Babel loader, recordemos que babel transforma el código js moderno a js compatible con navegadores antiguos
         },
       },
 
@@ -36,12 +37,12 @@ module.exports = {
           // Loader a utilizar
           MiniCssExtractPlugin.loader, // Extrae el css a un archivo independiente
           {
-            loader: "css-loader", // Interpreta los archivos css
+            loader: 'css-loader', // Interpreta los archivos css
             options: {
               // Opciones del loader
               modules: {
                 // Habilita el uso de módulosy poder importar estilos en los archivos js asi: import estilos from './estilos.css';
-                localIdentName: "[name]__[local]___[hash:base64:5]", // Nombre de las clases hasheadas
+                localIdentName: '[name]__[local]___[hash:base64:5]', // Nombre de las clases hasheadas
               },
             },
           },
@@ -49,7 +50,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i, // Expresión regular para identificar los archivos de imágenes
-        use: ["file-loader?name=assets/[name].[ext]"], // Loader a utilizar, file-loader, copia los archivos de imágenes al directorio de salida
+        use: ['file-loader?name=assets/[name].[ext]'], // Loader a utilizar, file-loader, copia los archivos de imágenes al directorio de salida
       },
     ],
   },
@@ -57,26 +58,26 @@ module.exports = {
     // Configuración de los plugins
     new HtmlWebpackPlugin({
       // Genera un archivo html en el directorio de salida
-      template: "./index.html", // Plantilla html
-      filename: "index.html", // Nombre del archivo de salida
+      template: './index.html', // Plantilla html
+      filename: 'index.html', // Nombre del archivo de salida
     }),
     new MiniCssExtractPlugin({
       // Extrae el css a un archivo independiente
-      filename: "[name].[contenthash].css", // Nombre del archivo de salida
-      chunkFilename: "[id].[contenthash].css", // Nombre del archivo de salida
+      filename: '[name].[contenthash].css', // Nombre del archivo de salida
+      chunkFilename: '[id].[contenthash].css', // Nombre del archivo de salida
     }),
   ],
   devServer: {
     // Configuración del servidor de desarrollo
     static: {
       // Directorio base del servidor
-      directory: path.join(__dirname, "dist"), // Directorio de salida
+      directory: path.join(__dirname, 'dist'), // Directorio de salida
     },
     compress: true, // Habilita la compresión
     port: 9000, // Puerto del servidor
     historyApiFallback: {
       // Habilita el enrutamiento de aplicaciones de una sola página
-      index: "/index.html", // super importante para que funcione el enrutamiento de aplicaciones de una sola página
+      index: '/index.html', // super importante para que funcione el enrutamiento de aplicaciones de una sola página
     },
   },
 };
