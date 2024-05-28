@@ -1,28 +1,27 @@
-import styles from "./style.css";
-import hill from "../../../assets/img/hill1.png";
-import hill2 from "../../../assets/img/hill2.png";
-import hill3 from "../../../assets/img/hill3.png";
-import hill_4 from "../../../assets/img/hill4.png";
-import hill_5 from "../../../assets/img/hill5.png";
-import facebook from "../../../assets/img/facebook.png";
-import casa from "../../../assets/img/casa.png";
-import comida from "../../../assets/img/comida.png";
-import hojaM from "../../../assets/img/hojaM.png";
-import cepillo from "../../../assets/img/cepillo.png";
-import papel from "../../../assets/img/papel.png";
-import leaff from "../../../assets/img/leaf.png";
-import logo from "../../../assets/img/logo.png";
-import plant from "../../../assets/img/plant.png";
-import tree from "../../../assets/img/tree.png";
-import imagenAbout from "../../../assets/img/imagenAbout.png";
-import whastp from "../../../assets/img/whastp.png";
-import youtube from "../../../assets/img/youtube.png";
-import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
-import { navigateTo } from "../../../Router";
+import styles from './style.css';
+import hill from '../../../assets/img/hill1.png';
+import hill2 from '../../../assets/img/hill2.png';
+import hill3 from '../../../assets/img/hill3.png';
+import hill_4 from '../../../assets/img/hill4.png';
+import hill_5 from '../../../assets/img/hill5.png';
+import facebook from '../../../assets/img/facebook.png';
+import casa from '../../../assets/img/casa.png';
+import comida from '../../../assets/img/comida.png';
+import hojaM from '../../../assets/img/hojaM.png';
+import cepillo from '../../../assets/img/cepillo.png';
+import papel from '../../../assets/img/papel.png';
+import leaff from '../../../assets/img/leaf.png';
+import logo from '../../../assets/img/logo.png';
+import plant from '../../../assets/img/plant.png';
+import tree from '../../../assets/img/tree.png';
+import imagenAbout from '../../../assets/img/imagenAbout.png';
+import whastp from '../../../assets/img/whastp.png';
+import youtube from '../../../assets/img/youtube.png';
+import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
+import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
+import { navigateTo } from '../../../Router';
 
 export function HomePagePublic(params) {
-
   const pageContent = `
     <div ${styles.cuerpo}> 
     <!-- fondo de montañas -->
@@ -139,45 +138,41 @@ export function HomePagePublic(params) {
     `;
 
   const logic = () => {
-    
+    mostrarProductos();
 
+    let text = document.getElementById('text');
+    let leaf = document.getElementById('leaf');
+    let hill1 = document.getElementById('hill1');
+    let hill4 = document.getElementById('hill4');
+    let hill5 = document.getElementById('hill5');
+    let header = document.getElementById('head');
+    let user = document.getElementById('user');
+    let carrito = document.getElementById('carrito');
+    let input = document.getElementById('input_1');
+    let aboutSection = document.getElementById('about_secion');
+    let about = document.getElementById('about');
 
-    mostrarProductos()
-
-    
-    let text = document.getElementById("text");
-    let leaf = document.getElementById("leaf");
-    let hill1 = document.getElementById("hill1");
-    let hill4 = document.getElementById("hill4");
-    let hill5 = document.getElementById("hill5");
-    let header = document.getElementById("head");
-    let user = document.getElementById("user");
-    let carrito = document.getElementById("carrito");
-    let input = document.getElementById("input_1");
-    let aboutSection = document.getElementById("about_secion");
-    let about = document.getElementById("about");
-
-    about.addEventListener("click", (evento) => {
-        evento.preventDefault();
-        navigateTo("/about-us");
+    about.addEventListener('click', (evento) => {
+      evento.preventDefault();
+      navigateTo('/about-us');
     });
 
-    const products = document.querySelectorAll(".slider .product");
+    const products = document.querySelectorAll('.product');
+    console.log(products);
+    let arrowleft = document.getElementById('left');
+    let arrowrigth = document.getElementById('right');
 
-    let arrowleft = document.getElementById("left")
-    let arrowrigth = document.getElementById("right")
-
-    arrowleft.addEventListener("click", () => {
-      left()
+    arrowleft.addEventListener('click', () => {
+      left();
     });
 
-    arrowrigth.addEventListener("click", () => {
-      right()
+    arrowrigth.addEventListener('click', () => {
+      right();
     });
 
     let counter = 0;
     function left() {
-      console.log("hola desde arrow function left")
+      console.log('hola desde arrow function left');
       if (counter === 0) {
         counter = products.length / 3 - 1;
       } else {
@@ -196,6 +191,7 @@ export function HomePagePublic(params) {
     }
 
     function scroll() {
+      console.log(products);
       products.forEach((item) => {
         item.style.transform = `translateX(-${counter * 84}vw)`;
       });
@@ -204,25 +200,25 @@ export function HomePagePublic(params) {
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
 
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
       let value = window.scrollY;
 
       if (value < 114) {
         // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
-        header.style.backgroundColor = "transparent";
-        carrito.style.backgroundColor = "transparent";
-        user.style.backgroundColor = "transparent";
-        input.style.border = "none";
+        header.style.backgroundColor = 'transparent';
+        carrito.style.backgroundColor = 'transparent';
+        user.style.backgroundColor = 'transparent';
+        input.style.border = 'none';
       } else {
         // Aplicar estilos cuando el usuario ha pasado cierta posición
-        header.style.backgroundColor = "#f9f9f9";
-        carrito.style.backgroundColor = "#298172";
-        user.style.backgroundColor = "#298172";
-        carrito.style.padding = "5px";
-        user.style.padding = "5px";
-        carrito.style.borderRadius = "50px";
-        user.style.borderRadius = "50px";
-        input.style.border = "2px solid #298172";
+        header.style.backgroundColor = '#f9f9f9';
+        carrito.style.backgroundColor = '#298172';
+        user.style.backgroundColor = '#298172';
+        carrito.style.padding = '5px';
+        user.style.padding = '5px';
+        carrito.style.borderRadius = '50px';
+        user.style.borderRadius = '50px';
+        input.style.border = '2px solid #298172';
       }
 
       // Detener animaciones cuando el usuario alcanza la sección "About Us"
@@ -231,20 +227,20 @@ export function HomePagePublic(params) {
       }
 
       // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
-      text.style.marginTop = value * 2.5 + "px";
-      leaf.style.left = value * 1.5 + "px";
-      leaf.style.top = value * -1.5 + "px";
-      hill1.style.top = value * 1 + "px";
-      hill4.style.left = value * -1 + "px";
-      hill5.style.left = value * 1 + "px";
+      text.style.marginTop = value * 2.5 + 'px';
+      leaf.style.left = value * 1.5 + 'px';
+      leaf.style.top = value * -1.5 + 'px';
+      hill1.style.top = value * 1 + 'px';
+      hill4.style.left = value * -1 + 'px';
+      hill5.style.left = value * 1 + 'px';
     });
-
-    
   };
 
   async function AllProduct() {
     try {
-      const response = await fetch('http://localhost:4000/api/auth/get-products');
+      const response = await fetch(
+        'http://localhost:4000/api/auth/get-products'
+      );
       if (!response.ok) {
         throw new Error('Error al obtener los productos');
       }
@@ -255,16 +251,19 @@ export function HomePagePublic(params) {
       return null;
     }
   }
-  
-  async function AllProductbyIdcategory( id_category ) {
+
+  async function AllProductbyIdcategory(id_category) {
     try {
-      const response = await fetch('http://localhost:4000/api/auth/get-product-by-id-category', {
-        method: 'GET',
-        headers : {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ id_category })
-      });
+      const response = await fetch(
+        'http://localhost:4000/api/auth/get-product-by-id-category',
+        {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ id_category }),
+        }
+      );
 
       if (!response.ok) {
         throw new Error('Error al obtener los productos');
@@ -281,7 +280,7 @@ export function HomePagePublic(params) {
     const productos = await AllProduct();
     const contenedorProductos = document.getElementById('lista_1');
 
-    productos.forEach(producto => {
+    productos.forEach((producto) => {
       const divProducto = document.createElement('div');
       divProducto.classList.add('${styles.product}', 'product');
       divProducto.innerHTML = `
@@ -290,17 +289,16 @@ export function HomePagePublic(params) {
             <img src="${producto.image}" alt="${producto.nombre}">
             <h3 class="${styles.title_product}">${producto.name}</h3>
             <div class="${styles.producct_info}">
+              <p>Precio</p>
               <p class="${styles.precio} precio">${producto.price}</p>
-              <a class="${styles.btn2} agregar_carrito" data-id="${producto.id}">Add to cart</a>
             </div>
+            <a class="${styles.btn2} agregar_carrito" data-id="${producto.id}">Add to cart</a>
           </div>
         </div>
       `;
       contenedorProductos.appendChild(divProducto);
     });
   }
-
-  
 
   return {
     pageContent,
