@@ -218,3 +218,14 @@ a.active {
   color: #f9f9f9;
   background-color: #298172;
 }
+
+.search_cont{
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 2;
+  width: 100%;
+  min-height: 100%;
+  top: 160%;
+  border-radius: 20px;
+}

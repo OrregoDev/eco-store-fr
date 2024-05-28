@@ -12,8 +12,17 @@ export function logicNav(){
   let popUp;
   let total = document.getElementById("precio_total");
   let precio = 0;
+  // const btn_product_nav = document.getElementById("producto_nav")
+  // const btn_home_nav = document.getElementById("home_nav")
 
-  
+  // btn_home_nav.addEventListener('click', 
+  //   console.log("hola"),
+  //   navigateTo("/home-page")
+  // )
+  // btn_product_nav.addEventListener('click',
+  // console.log("hola"), 
+  // navigateTo("/product")
+  // )
 
   const carrito = document.getElementById('carrito');
   const elemetos1 = document.getElementById('lista_1');
@@ -174,6 +183,29 @@ export function logicNav(){
     
   });
   
+  const formSearch = document.getElementById("form_search");
+  const containerSearch = document.getElementById("container_search");
+
+  // Función para mostrar el contenedor de búsqueda
+  function mostrarContainerSearch() {
+    containerSearch.style.display = "block";
+  }
+
+  // Función para ocultar el contenedor de búsqueda
+  function ocultarContainerSearch() {
+    containerSearch.style.display = "none";
+  }
+
+  // Evento focus en el formulario de búsqueda
+  formSearch.addEventListener("focusin", mostrarContainerSearch);
+
+  // Evento blur en el formulario de búsqueda
+  formSearch.addEventListener("focusout", ocultarContainerSearch);
+
+  // Evento click en el contenedor de búsqueda
+  containerSearch.addEventListener("click", function(event) {
+    event.stopPropagation(); // Evita que el clic se propague al contenedor principal
+  });
   
   cargarEventListeners();
 }
