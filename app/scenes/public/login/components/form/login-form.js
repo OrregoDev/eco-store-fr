@@ -6,14 +6,21 @@ export async function LoginFormComponent() {
   const root = document.getElementById('root');
 
   root.innerHTML = `
-      <form id="loginForm" class="${style.form}">
-        <h2>Login</h2>
-        <label for="email" class="${style.label}">Email:</label>
-        <input type="text" id="email" name="email" autocomplete="email" class="${style['input-email']}">
-        <label for="password" class="${style.label}">Password:</label>
-        <input type="password" id="password" name="password" autocomplete="current-password" class="${style['input-password']}">
-        <button type="submit" class="${style['button-send']}">Login</button>
-      </form>
+      <div class = "${style.backgroundOpacity}">
+        <form id="loginForm" class="${style.form}">
+          <h2 class ="${style.Login}">Login</h2>
+          <label for="email" class="${style.label}">Email:</label>
+          <input type="text" id="email" name="email" autocomplete="email" class="${style['input-email']}">
+          <label for="password" class="${style.label}">Password:</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" class="${style['input-password']}">
+          <button type="submit" class="${style['button-send']}">Login</button>
+        </form>
+        <div class="${style.divRight}">
+          <h2>Still do not have an account?</h2>
+          <p>Register so you can login</p>
+          <button class= "${style.registerBtn}">Register</button>
+        </div>
+      </div>
     `;
   
   const form = document.getElementById('loginForm');
