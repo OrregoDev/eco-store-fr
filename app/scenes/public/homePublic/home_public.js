@@ -1,29 +1,30 @@
-import styles from './style.css';
-import hill from '../../../assets/img/hill1.png';
-import hill2 from '../../../assets/img/hill2.png';
-import hill3 from '../../../assets/img/hill3.png';
-import hill_4 from '../../../assets/img/hill4.png';
-import hill_5 from '../../../assets/img/hill5.png';
-import facebook from '../../../assets/img/facebook.png';
-import casa from '../../../assets/img/casa.png';
-import comida from '../../../assets/img/comida.png';
-import hojaM from '../../../assets/img/hojaM.png';
-import cepillo from '../../../assets/img/cepillo.png';
-import papel from '../../../assets/img/papel.png';
-import leaff from '../../../assets/img/leaf.png';
-import logo from '../../../assets/img/logo.png';
-import plant from '../../../assets/img/plant.png';
-import tree from '../../../assets/img/tree.png';
-import imagenAbout from '../../../assets/img/imagenAbout.png';
-import whastp from '../../../assets/img/whastp.png';
-import youtube from '../../../assets/img/youtube.png';
-import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from '../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg';
-import { navigateTo } from '../../../Router';
+import styles from "./style.css";
+import hill from "../../../assets/img/hill1.png";
+import hill2 from "../../../assets/img/hill2.png";
+import hill3 from "../../../assets/img/hill3.png";
+import hill_4 from "../../../assets/img/hill4.png";
+import hill_5 from "../../../assets/img/hill5.png";
+import facebook from "../../../assets/img/facebook.png";
+import casa from "../../../assets/img/casa.png";
+import comida from "../../../assets/img/comida.png";
+import hojaM from "../../../assets/img/hojaM.png";
+import cepillo from "../../../assets/img/cepillo.png";
+import papel from "../../../assets/img/papel.png";
+import leaff from "../../../assets/img/leaf.png";
+import logo from "../../../assets/img/logo.png";
+import plant from "../../../assets/img/plant.png";
+import tree from "../../../assets/img/tree.png";
+import imagenAbout from "../../../assets/img/imagenAbout.png";
+import whastp from "../../../assets/img/whastp.png";
+import youtube from "../../../assets/img/youtube.png";
+import arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24 from "../../../assets/img/arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24.svg";
+import { navigateTo } from "../../../Router";
 
 export function HomePagePublic(params) {
+
   const pageContent = `
-    <div ${styles.cuerpo} id="cliff"> 
+    <div ${styles.cuerpo}> 
     <!-- fondo de montañas -->
     <section class="${styles.parallax}">
         <img src="${hill}" id="hill1" alt="">
@@ -59,13 +60,13 @@ export function HomePagePublic(params) {
           </div>
         </section>
         <!-- seccion de productos -->
-        <section class="${styles.products}" >
+        <section class="${styles.products}">
           <h2 class="${styles.about_title}">Products</h2>
           <div class="${styles.category}">
-            <button><img src="${hojaM}" alt=""></button>
-            <button><img src="${casa}" alt=""></button>
-            <button><img src="${comida}" alt=""></button>
-            <button><img src="${papel}" alt=""></button>
+            <button id="mari"><img src="${hojaM}" alt=""></button>
+            <button id="casa"><img src="${casa}" alt=""></button>
+            <button id="comid"><img src="${comida}" alt=""></button>
+            <button id="papel"><img src="${papel}" alt=""></button>
           </div>
           <p class="${styles.text_product_top}">Top select</p>
           <div class="${styles.top_product}">
@@ -74,200 +75,7 @@ export function HomePagePublic(params) {
             </div>
             <div class="${styles.cards}">
               <div class="${styles.slider} slider" id="lista_1">
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="${styles.product} product" id="productos">
-                  <div class="${styles.card}">
-                    <div class="${styles.card_prodct}">
-                      <img src="${cepillo}" alt=""> 
-                      <h3 class="${styles.title_product}">Cepillo de dientes de bamboo</h3>
-                      <div class="${styles.producct_info}">
-                        <p class="${styles.precio} precio" >$ 12.212</p>
-                        <a class="${styles.btn2} agregar_carrito" data-id="1">Add to cart</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              
             </div>
             <div class="${styles.arrows} right" id="right">
               <img class="${styles.arrow}" src="${arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
@@ -280,7 +88,7 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}" id="verMas">Read More</a>
+                    <a href="" class="${styles.btn3}">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -288,7 +96,7 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum </p>
-                    <a href="" class="${styles.btn3}" id="verMas1">Read More</a>
+                    <a href="" class="${styles.btn3}">Read More</a>
                 </div>
             </div>
             <div class="${styles.algunos_comentarios}">
@@ -296,13 +104,13 @@ export function HomePagePublic(params) {
                 <div class="${styles.comentarios_text}">
                     <p class="${styles.artles_ttitle}">Lorem ipsum dolor sit.</p>
                     <p class="${styles.arles_txt}">Lorem ipsum dolor sit amet consectetur molestias. Eos ratione ex nisi voluptatem possimus natus qui iste iure soluta quam, corporis doloremque obcaecati sunt sequi, quaerat ullam at deserunt. Neque itaque animi accusantium architecto vitae. Accusantium veritatis aspernatur vitae excepturi atque? Rem incidunt quia vitae quidem, fugiat dolore quas iusto sequi exercitationem illum aperiam eos fugit nostrum</p>
-                    <a href="" class="${styles.btn3}" id="verMas2">Read More</a>
+                    <a href="" class="${styles.btn3}">Read More</a>
                 </div>
             </div>
         </section>
 
     </main>
-    <footer class="${styles.pie_pagina}" id="footer">
+    <footer class="${styles.pie_pagina}">
       <img class="${styles.logo}" src="${logo}" alt="img">
       <div class="${styles.contact}">
         <h2>Contacto</h2>
@@ -322,7 +130,7 @@ export function HomePagePublic(params) {
         </ul>
         <div class="${styles.Socials}">
           <h2>Redes Sociales</h2>
-          <a href="https://www.facebook.com/?locale=es_LA"><img src="${facebook}" alt="icon"></a><a href="https://www.whatsapp.com/?lang=es_LA"><img src="${whastp}" alt="icon"></a><a href="https://www.youtube.com/"><img src="${youtube}" alt="icon"></a>
+          <img src="${facebook}" alt="icon"><img src="${whastp}" alt="icon"><img src="${youtube}" alt="icon">
           <!-- en caso de tener que cambiar el color, se usa boxicons -->
         </div>
       </div>
@@ -331,59 +139,45 @@ export function HomePagePublic(params) {
     `;
 
   const logic = () => {
-    let text = document.getElementById('text');
-    let leaf = document.getElementById('leaf');
-    let hill1 = document.getElementById('hill1');
-    let hill4 = document.getElementById('hill4');
-    let hill5 = document.getElementById('hill5');
-    let header = document.getElementById('head');
-    let user = document.getElementById('user');
-    let carrito = document.getElementById('carrito');
-    let input = document.getElementById('input_1');
-    let aboutSection = document.getElementById('about_secion');
-    let about = document.getElementById('about');
-    let SeeMore = document.getElementById('verMas');
-    let SeeMore1 = document.getElementById('verMas1');
-    let SeeMore2 = document.getElementById('verMas2');
+    
 
-    about.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      navigateTo('/about-us');
+
+    mostrarProductos()
+
+    
+    let text = document.getElementById("text");
+    let leaf = document.getElementById("leaf");
+    let hill1 = document.getElementById("hill1");
+    let hill4 = document.getElementById("hill4");
+    let hill5 = document.getElementById("hill5");
+    let header = document.getElementById("head");
+    let user = document.getElementById("user");
+    let carrito = document.getElementById("carrito");
+    let input = document.getElementById("input_1");
+    let aboutSection = document.getElementById("about_secion");
+    let about = document.getElementById("about");
+
+    about.addEventListener("click", (evento) => {
+        evento.preventDefault();
+        navigateTo("/about-us");
     });
 
-    const blogPath = '/blog';
+    const products = document.querySelectorAll(".slider .product");
 
-    SeeMore1.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      navigateTo(blogPath);
+    let arrowleft = document.getElementById("left")
+    let arrowrigth = document.getElementById("right")
+
+    arrowleft.addEventListener("click", () => {
+      left()
     });
 
-    SeeMore2.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      navigateTo(blogPath);
-    });
-
-    SeeMore.addEventListener('click', (evento) => {
-      evento.preventDefault();
-      navigateTo(blogPath);
-    });
-
-    const products = document.querySelectorAll('.slider .product');
-
-    let arrowleft = document.getElementById('left');
-    let arrowrigth = document.getElementById('right');
-
-    arrowleft.addEventListener('click', () => {
-      left();
-    });
-
-    arrowrigth.addEventListener('click', () => {
-      right();
+    arrowrigth.addEventListener("click", () => {
+      right()
     });
 
     let counter = 0;
     function left() {
-      console.log('hola desde arrow function left');
+      console.log("hola desde arrow function left")
       if (counter === 0) {
         counter = products.length / 3 - 1;
       } else {
@@ -410,25 +204,25 @@ export function HomePagePublic(params) {
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       let value = window.scrollY;
 
       if (value < 114) {
         // Restaurar estilos cuando el usuario no ha alcanzado la sección "About Us"
-        header.style.backgroundColor = 'transparent';
-        carrito.style.backgroundColor = 'transparent';
-        user.style.backgroundColor = 'transparent';
-        input.style.border = 'none';
+        header.style.backgroundColor = "transparent";
+        carrito.style.backgroundColor = "transparent";
+        user.style.backgroundColor = "transparent";
+        input.style.border = "none";
       } else {
         // Aplicar estilos cuando el usuario ha pasado cierta posición
-        header.style.backgroundColor = '#f9f9f9';
-        carrito.style.backgroundColor = '#298172';
-        user.style.backgroundColor = '#298172';
-        carrito.style.padding = '5px';
-        user.style.padding = '5px';
-        carrito.style.borderRadius = '50px';
-        user.style.borderRadius = '50px';
-        input.style.border = '2px solid #298172';
+        header.style.backgroundColor = "#f9f9f9";
+        carrito.style.backgroundColor = "#298172";
+        user.style.backgroundColor = "#298172";
+        carrito.style.padding = "5px";
+        user.style.padding = "5px";
+        carrito.style.borderRadius = "50px";
+        user.style.borderRadius = "50px";
+        input.style.border = "2px solid #298172";
       }
 
       // Detener animaciones cuando el usuario alcanza la sección "About Us"
@@ -437,14 +231,76 @@ export function HomePagePublic(params) {
       }
 
       // Aplicar animaciones mientras el usuario no ha alcanzado la sección "About Us"
-      text.style.marginTop = value * 2.5 + 'px';
-      leaf.style.left = value * 1.5 + 'px';
-      leaf.style.top = value * -1.5 + 'px';
-      hill1.style.top = value * 1 + 'px';
-      hill4.style.left = value * -1 + 'px';
-      hill5.style.left = value * 1 + 'px';
+      text.style.marginTop = value * 2.5 + "px";
+      leaf.style.left = value * 1.5 + "px";
+      leaf.style.top = value * -1.5 + "px";
+      hill1.style.top = value * 1 + "px";
+      hill4.style.left = value * -1 + "px";
+      hill5.style.left = value * 1 + "px";
     });
+
+    
   };
+
+  async function AllProduct() {
+    try {
+      const response = await fetch('http://localhost:4000/api/auth/get-products');
+      if (!response.ok) {
+        throw new Error('Error al obtener los productos');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error al obtener los productos:', error);
+      return null;
+    }
+  }
+  
+  async function AllProductbyIdcategory( id_category ) {
+    try {
+      const response = await fetch('http://localhost:4000/api/auth/get-product-by-id-category', {
+        method: 'GET',
+        headers : {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ id_category })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error al obtener los productos');
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error al obtener los productos:', error);
+      return null;
+    }
+  }
+
+  async function mostrarProductos() {
+    const productos = await AllProduct();
+    const contenedorProductos = document.getElementById('lista_1');
+
+    productos.forEach(producto => {
+      const divProducto = document.createElement('div');
+      divProducto.classList.add('${styles.product}', 'product');
+      divProducto.innerHTML = `
+        <div class="${styles.card}">
+          <div class="${styles.card_prodct}">
+            <img src="${producto.image}" alt="${producto.nombre}">
+            <h3 class="${styles.title_product}">${producto.name}</h3>
+            <div class="${styles.producct_info}">
+              <p class="${styles.precio} precio">${producto.price}</p>
+              <a class="${styles.btn2} agregar_carrito" data-id="${producto.id}">Add to cart</a>
+            </div>
+          </div>
+        </div>
+      `;
+      contenedorProductos.appendChild(divProducto);
+    });
+  }
+
+  
 
   return {
     pageContent,

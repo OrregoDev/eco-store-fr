@@ -380,17 +380,6 @@ main{
   color: #f9f9f9;
   border-radius: 40px;
   font-weight: 700;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  cursor: pointer;
-}
-
-.btn2:hover {
-  background-color: #007bff;
-  transform: scale(1.05);
-}
-
-.btn2:active {
-  transform: scale(0.95);
 }
 
 .cards{
@@ -495,4 +484,18 @@ main{
 .Socials img {
   height: 50px;
   width: auto;
+}
+
+.cantidad{
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  gap: 5px;
+}
+.botones_cantidad{
+  padding: 5px 10px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #f9f9f9;
+  background-color: #298172;
 }

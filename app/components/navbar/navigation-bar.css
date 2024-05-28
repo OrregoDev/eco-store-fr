@@ -180,13 +180,41 @@ a.active {
   display: inline-block;
   padding: 10px 25px;
   font-size: 14px;
-  color: #fff;
-  border: 1px solid var(--primary-color);
+  color: #f9f9f9;
+  border: 1px solid #f9f9f9;
   border-radius: 25px;
-  margin-top: 15px;
 }
 
 .btn_3:hover{
   background-color: var(--primary-color);
-  
+  color: #f9f9f9;
+  border: none;
+}
+
+.botones {
+    display: flex;
+    height: 60px;
+    height: 100px;
+    align-items: center;
+    gap: 10px;
+}
+
+.botones p{
+  color: #f9f9f9;
+  font-size: 22px;
+  font-weight: 700;
+}
+.cantidad{
+  display: flex;
+  background-color: #298172;
+  margin-top: 150px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.cantidades a{
+  padding: 5px 10px;
+  text-decoration: none;
+  color: #f9f9f9;
+  background-color: #298172;
 }
