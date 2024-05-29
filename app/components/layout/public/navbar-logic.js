@@ -12,6 +12,7 @@ export function logicNav() {
   let popUp;
   let total = document.getElementById("precio_total");
   let precio = 0;
+  let cantidad = 0;
   // const btn_product_nav = document.getElementById("producto_nav")
   // const btn_home_nav = document.getElementById("home_nav")
 
@@ -50,7 +51,28 @@ export function logicNav() {
       precio: elemento.querySelector(".precio").textContent,
       id: elemento.querySelector("a").getAttribute("data-id"),
     };
-    //
+    const hijos = lista.children
+    const hijosarray = Array.from(hijos);
+    let esta;
+    console.log(hijosarray);
+    hijosarray.forEach((e) => {
+      console.log(e);
+      let tara = e.firstElementChild  
+      console.log(tara);
+      if (tara.getAttribute("data-id") === infoElemnto.id) {
+        cantidad = parseInt(tara.querySelector("#cantidad").textContent);
+        cantidad += 1;
+        tara.querySelector("#cantidad").textContent = cantidad;
+        cantidad = "1tgyh";
+        esta = true
+      } 
+    })
+    console.log(esta);
+    if(esta){
+      cantidad += 0;
+      return
+    }
+
     insertarCarrito(infoElemnto);
   }
 
@@ -69,7 +91,7 @@ export function logicNav() {
                 </div>
                 <div class="${styles.cantidad}">
                       <p class="${styles.botones_cantidad}" href="#" id="sumar">+</p>
-                      <p id="cantidad">1</p>
+                      <p id="cantidad" class="cantidad">1</p>
                       <p class="${styles.botones_cantidad}" href="#" id="restar">-<pa>
                 </div>
             </div>
