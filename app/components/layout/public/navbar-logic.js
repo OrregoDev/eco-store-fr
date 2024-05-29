@@ -33,7 +33,43 @@ export function logicNav() {
   function cargarEventListeners() {
     elemetos1.addEventListener("click", comprarElemento);
     carrito.addEventListener("click", eliminarElemnto);
+    carrito.addEventListener("click", sumando);
+    carrito.addEventListener("click", restando);
     vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+  }
+
+  function sumando(e) {
+    if (e.target.classList.contains("sumando")) {
+      let hola = e.target.parentElement.parentElement
+      let cantidades = parseInt(hola.querySelector('#cantidad').textContent)
+      hola.querySelector('#cantidad').textContent = cantidades+1;
+      console.log(cantidades)
+      console.log(document.getElementById("precio_total"))
+      let preciores = hola.querySelector('#precios').textContent;
+      let soloNumeros = preciores.replace(/\D/g,"");
+      let numpre = parseInt(soloNumeros);
+      let canti = cantidades+1
+      console.log(numpre*canti)
+      precio += numpre*canti
+      total.textContent = precio;
+    }
+  }
+
+  function restando(e) {
+    if (e.target.classList.contains("restando")) {
+      let hola = e.target.parentElement.parentElement
+      let cantidades = parseInt(hola.querySelector('#cantidad').textContent)
+      hola.querySelector('#cantidad').textContent = cantidades-1;
+      console.log(cantidades)
+      console.log(document.getElementById("precio_total"))
+      let preciores = hola.querySelector('#precios').textContent;
+      let soloNumeros = preciores.replace(/\D/g,"");
+      let numpre = parseInt(soloNumeros);
+      let canti = cantidades-1
+      console.log(numpre*canti)
+      precio += numpre*canti
+      total.textContent = precio;
+    }
   }
 
   function comprarElemento(e) {
@@ -61,18 +97,27 @@ export function logicNav() {
       console.log(tara);
       if (tara.getAttribute("data-id") === infoElemnto.id) {
         cantidad = parseInt(tara.querySelector("#cantidad").textContent);
+        let sumar = tara.querySelector("#sumar");
+        precio -= infoElemnto.precio
         cantidad += 1;
+        console.log(cantidad)
+        let precioTotal = infoElemnto.precio * cantidad;
+        precio = precioTotal+precio;
+        total.textContent = precio;
         tara.querySelector("#cantidad").textContent = cantidad;
-        cantidad = "1tgyh";
         esta = true
+
+        sumar.addEventListener("click", (e)=>{
+          e.preventDefault()
+          cantidad += 1;
+          console.log("hola")
+        })
       } 
     })
-    console.log(esta);
     if(esta){
-      cantidad += 0;
       return
     }
-
+    console.log(total.textContent)
     insertarCarrito(infoElemnto);
   }
 
@@ -87,12 +132,12 @@ export function logicNav() {
             <div class="${style.info_product_carrito} info_product_carrito">
                 <div class="${style.text_product_carrito} ">
                     <p>${elemento.titulo}</p>
-                    <p class="precio">Precio: $${elemento.precio}</p>
+                    <p class="precio" id="precios">Precio: $${elemento.precio}</p>
                 </div>
                 <div class="${styles.cantidad}">
-                      <p class="${styles.botones_cantidad}" href="#" id="sumar">+</p>
+                      <p class="${styles.botones_cantidad} sumando" href="#" id="sumar">+</p>
                       <p id="cantidad" class="cantidad">1</p>
-                      <p class="${styles.botones_cantidad}" href="#" id="restar">-<pa>
+                      <p class="${styles.botones_cantidad} restando" href="#" id="restar">-<pa>
                 </div>
             </div>
           </div>
@@ -101,10 +146,13 @@ export function logicNav() {
       `;
 
     const numpre = parseInt(elemento.precio);
+    console.log(precio)
     precio += numpre;
     total.textContent = precio;
     lista.appendChild(row);
   }
+
+  
 
   function eliminarElemnto(e) {
     let elemento, elementoId;
@@ -118,7 +166,9 @@ export function logicNav() {
       let soloNumeros = preciorestart.replace(/\D/g, "");
       console.log(soloNumeros);
       const numpre = parseInt(soloNumeros);
-      precio -= numpre;
+      cantidad = parseInt(elemento.querySelector("#cantidad").textContent)
+      let precioTotal = cantidad * numpre;
+      precio -= precioTotal;
       total.textContent = precio;
     }
   }
