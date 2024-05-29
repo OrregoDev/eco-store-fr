@@ -197,11 +197,7 @@ export function logicNav() {
       // ...
       // Luego lo añades al DOM, algo así como:
       // document.body.appendChild(popUp);
-    } else {
-      // Aquí ocultas el popup y restableces la variable SwitchPopup
-      popUp.style.display = "none";
-      SwitchPopup = false;
-    }
+    
     popUp.className = styles.backgroundOpacity;
     popUp.innerHTML = `
       <div class = "${style.backgroundOpacity}">
@@ -220,14 +216,62 @@ export function logicNav() {
         </div>
       </div>
       `;
-
-    // let profileRegisterBtn = document.getElementById("profile-register-btn");
-    // profileRegisterBtn.addEventListener("click", (event) => {
-    //   event.preventDefault();
-    //   navigateTo("/register");
-    // });
-
-    root.appendChild(popUp);
+      root.appendChild(popUp);
+    } else {
+      popUp.style.display = "none";
+      SwitchPopup = false;
+    }
+  
+    const profileRegisterBtn = document.getElementById("profile-register-btn");
+    
+    let switchRegister = false;
+  
+    profileRegisterBtn.addEventListener("click", (event) => {
+      event.preventDefault();
+      if (!switchRegister) {
+        switchRegister = true;
+        popUp.style.display = "none";
+        registerView = document.createElement("div");
+        registerView.style.display = "block";
+        registerView.className = styles.backgroundOpacity;
+        registerView.innerHTML = `
+          <div class = "${style.backgroundOpacity}">
+            <form id="registerForm" class="${style.form}">
+              <h2 class ="${style.Login}">Register</h2>
+              <label for="name" class="${style.label}">Name:</label>
+              <input type="text" id="name" name="name" autocomplete="email" class="${style["input-email"]}">
+              <label for="lastname" class="${style.label}">Last Name:</label>
+              <input type="text" id="lastname" name="email" autocomplete="email" class="${style["input-email"]}">
+              <label for="email" class="${style.label}">Email:</label>
+              <input type="text" id="email" name="email" autocomplete="email" class="${style["input-email"]}">
+              <label for="password" class="${style.label}">Password:</label>
+              <input type="password" id="password" name="password" autocomplete="current-password" class="${style["input-password"]}">
+              <button type="submit" class="${style["button-send"]}">Register</button>
+            </form>
+            <div class="${style.divRight}">
+              <h2>have an account?</h2>
+              <p>click below to login</p>
+              <button class= "${style.registerBtn}" id="return-login">Login</button>
+            </div>
+          </div>
+        `;
+        root.appendChild(registerView);
+        const returnLoginBtn = document.getElementById("return-login");
+  
+    returnLoginBtn.addEventListener("click", () => {
+      popUp.style.display = "block";
+      registerView.style.display = "none";
+      root.removeChild(registerView);
+    });
+      } else {
+        switchRegister = false;
+        popUp.style.display = "block";
+        registerView.style.display = "none";
+        // root.removeChild(registerView);
+      }
+    });
+    
+  
     const form = document.getElementById("loginForm");
     form.addEventListener("submit", async (event) => {
       event.preventDefault(); // previene el comportamiento por default que es, recargar la pagina
@@ -242,7 +286,6 @@ export function logicNav() {
       console.log(token);
       if (token) {
         localStorage.setItem("token", token);
-        localStorage.setItem("holaaaa", "hola");
         navigateTo("/home-page");
       } else {
         alert("Invalid credentials");
