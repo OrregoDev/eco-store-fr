@@ -185,7 +185,7 @@ export function logicNav() {
     const [isValid] = await verifyToken(token);
 
     if (isValid) {
-      navigateTo("/about-us");
+      navigateTo("/ProdileUser");
       return;
     }
 

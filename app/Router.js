@@ -1,4 +1,4 @@
-
+import { DashboardLayout } from './components/layout/private/dashboard/dashboard-layout';
 import { DashboardLayoutPublic } from './components/layout/public/layout';
 import { routes } from './helpers/routes';
 
@@ -47,7 +47,6 @@ async function checkAuth(path, params) {
         navigateTo('/home-page');
         return;
       }
-
       // Ejecutar componente privado correspondiente
       const privateRoute = routes.private.find((r) => r.path === path);
       if (privateRoute) {

@@ -1,12 +1,11 @@
-import styles from './navigation-bar.css';
+import styles from './navar.css';
 import logo from '../../assets/img/logo.png'
 import search_24dp_FILL0_wght400_GRAD0_opsz24 from '../../assets/img/search_24dp_FILL0_wght400_GRAD0_opsz24.svg';
 import shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24 from '../../assets/img/shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24.svg'
 import person_24dp_FILL0_wght400_GRAD0_opsz24 from '../../assets/img/person_24dp_FILL0_wght400_GRAD0_opsz24.svg'
 
 
-export function NavigationBar() {
-    
+export function NavigationVar() {
   return `
   <header class="${styles.header}" id="head">
   <!--header logo -->

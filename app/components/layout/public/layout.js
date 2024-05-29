@@ -1,4 +1,4 @@
-import { NavigationBar } from "../../navbar/index";
+import { NavigationVar } from "../../navbar/index";
 import { logicNav } from './navbar-logic'
 
 export function DashboardLayoutPublic(pageContent, logic) {
@@ -6,7 +6,7 @@ export function DashboardLayoutPublic(pageContent, logic) {
   root.innerHTML = `
   <div class="">
     <div class="">
-      ${NavigationBar()}
+      ${NavigationVar()}
     </div>
     <div class="">
       ${pageContent}

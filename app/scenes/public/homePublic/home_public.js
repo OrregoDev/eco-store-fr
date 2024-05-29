@@ -157,7 +157,6 @@ export function HomePagePublic(params) {
     });
 
     const products = document.querySelectorAll('.product');
-    console.log(products);
     let arrowleft = document.getElementById('left');
     let arrowrigth = document.getElementById('right');
 
@@ -253,15 +252,14 @@ export function HomePagePublic(params) {
     }
   }
 
+  console.log(AllProductbyIdcategory(1))
+
   async function AllProductbyIdcategory(id_category) {
     try {
       const response = await fetch(
         'http://localhost:4000/api/auth/get-product-by-id-category',
         {
-          method: 'GET',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          method: 'POST',
           body: JSON.stringify({ id_category }),
         }
       );
@@ -287,7 +285,7 @@ export function HomePagePublic(params) {
       divProducto.innerHTML = `
         <div class="${styles.card}">
           <div class="${styles.card_prodct}">
-            <img src="${producto.image}" alt="${producto.nombre}">
+            <img src="${producto.image}" alt="${producto.name}">
             <h3 class="${styles.title_product}">${producto.name}</h3>
             <div class="${styles.producct_info}">
               <p>Precio</p>
