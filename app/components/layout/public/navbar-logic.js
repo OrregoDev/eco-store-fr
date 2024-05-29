@@ -1,12 +1,12 @@
-import style from './navbar-logic.css'
-import styles from '../../../scenes/public/homePublic/style.css'
-import { navigateTo } from '../../../Router';
-import { verifyToken } from '../../../Router'
-import { formValidator } from '../../../helpers/index';
-import { login } from '../../../scenes/public/login/components/form';
+import style from "./navbar-logic.css";
+import styles from "../../../scenes/public/homePublic/style.css";
+import { navigateTo } from "../../../Router";
+import { verifyToken } from "../../../Router";
+import { formValidator } from "../../../helpers/index";
+import { login } from "../../../scenes/public/login/components/form";
 
-export function logicNav(){
-  console.log('hdsaads')
+export function logicNav() {
+  console.log("hdsaads");
   let user = document.getElementById("user");
   let SwitchPopup = false;
   let popUp;
@@ -15,50 +15,48 @@ export function logicNav(){
   // const btn_product_nav = document.getElementById("producto_nav")
   // const btn_home_nav = document.getElementById("home_nav")
 
-  // btn_home_nav.addEventListener('click', 
+  // btn_home_nav.addEventListener('click',
   //   console.log("hola"),
   //   navigateTo("/home-page")
   // )
   // btn_product_nav.addEventListener('click',
-  // console.log("hola"), 
+  // console.log("hola"),
   // navigateTo("/product")
   // )
 
-  const carrito = document.getElementById('carrito');
-  const elemetos1 = document.getElementById('lista_1');
-  const lista = document.querySelector('#lista-carrito div');
-  const vaciarCarritoBtn = document.getElementById('vaciar-carrito');
-  
-  
-  function cargarEventListeners(){
-      elemetos1.addEventListener('click', comprarElemento);
-      carrito.addEventListener('click', eliminarElemnto);
-      vaciarCarritoBtn.addEventListener('click', vaciarCarrito);
-      
+  const carrito = document.getElementById("carrito");
+  const elemetos1 = document.getElementById("lista_1");
+  const lista = document.querySelector("#lista-carrito div");
+  const vaciarCarritoBtn = document.getElementById("vaciar-carrito");
+
+  function cargarEventListeners() {
+    elemetos1.addEventListener("click", comprarElemento);
+    carrito.addEventListener("click", eliminarElemnto);
+    vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
   }
-  
+
   function comprarElemento(e) {
-      if(e.target.classList.contains('agregar_carrito')){
-          const elemeto = e.target.parentElement.parentElement;
-          console.log(elemeto)
-          leerDatosElemento(elemeto);
-      }
+    if (e.target.classList.contains("agregar_carrito")) {
+      const elemeto = e.target.parentElement.parentElement;
+      console.log(elemeto);
+      leerDatosElemento(elemeto);
+    }
   }
-  
-  function leerDatosElemento(elemento){
-      const infoElemnto = {
-          imagen: elemento.querySelector('img').src,
-          titulo: elemento.querySelector('h3').textContent,
-          precio: elemento.querySelector('.precio').textContent,
-          id: elemento.querySelector('a').getAttribute('data-id')
-      }
-      insertarCarrito(infoElemnto);
+
+  function leerDatosElemento(elemento) {
+    const infoElemnto = {
+      imagen: elemento.querySelector("img").src,
+      titulo: elemento.querySelector("h3").textContent,
+      precio: elemento.querySelector(".precio").textContent,
+      id: elemento.querySelector("a").getAttribute("data-id"),
+    };
+    //
+    insertarCarrito(infoElemnto);
   }
-  
-  
-  function insertarCarrito(elemento){
-      const row = document.createElement('div');
-      row.innerHTML = `
+
+  function insertarCarrito(elemento) {
+    const row = document.createElement("div");
+    row.innerHTML = `
         <div class="${style.producto_carrito}" data-id="${elemento.id}">
           <div class="${style.producto_carrito_img_text}">
             <div class="${style.img_product_carrito}">
@@ -80,45 +78,43 @@ export function logicNav(){
         </div>  
       `;
 
-      const numpre = parseInt(elemento.precio)
-      precio += numpre
-      total.textContent = precio
-      lista.appendChild(row);
+    const numpre = parseInt(elemento.precio);
+    precio += numpre;
+    total.textContent = precio;
+    lista.appendChild(row);
   }
-  
-  function eliminarElemnto(e){
-    let elemento,elementoId;
-    if(e.target.classList.contains('borrar')){
-        e.target.parentElement.parentElement.remove();
-        elemento = e.target.parentElement.parentElement;
-        elementoId = elemento.querySelector('a').getAttribute('data-id');
 
-        let preciores = elemento.querySelector('.precio')
-        let preciorestart = preciores.textContent
-        let soloNumeros = preciorestart.replace(/\D/g, '');
-        console.log(soloNumeros)
-        const numpre = parseInt(soloNumeros)
-        precio -= numpre
-        total.textContent = precio
+  function eliminarElemnto(e) {
+    let elemento, elementoId;
+    if (e.target.classList.contains("borrar")) {
+      e.target.parentElement.parentElement.remove();
+      elemento = e.target.parentElement.parentElement;
+      elementoId = elemento.querySelector("a").getAttribute("data-id");
+
+      let preciores = elemento.querySelector(".precio");
+      let preciorestart = preciores.textContent;
+      let soloNumeros = preciorestart.replace(/\D/g, "");
+      console.log(soloNumeros);
+      const numpre = parseInt(soloNumeros);
+      precio -= numpre;
+      total.textContent = precio;
     }
-}
-
-  
-  function vaciarCarrito() {
-      while(lista.firstChild){
-          lista.removeChild(lista.firstChild);
-      }
-      return false;
   }
-  
-  user.addEventListener("click", async () => {
 
-    const token = localStorage.getItem('token');
+  function vaciarCarrito() {
+    while (lista.firstChild) {
+      lista.removeChild(lista.firstChild);
+    }
+    return false;
+  }
+
+  user.addEventListener("click", async () => {
+    const token = localStorage.getItem("token");
     const [isValid] = await verifyToken(token);
 
-    if(isValid){
-      navigateTo("/about-us")
-      return
+    if (isValid) {
+      navigateTo("/about-us");
+      return;
     }
 
     if (!SwitchPopup) {
@@ -171,20 +167,35 @@ export function logicNav(){
         return;
       }
       const token = await login(email, password);
-      console.log(token)
+      console.log(token);
       if (token) {
         localStorage.setItem("token", token);
-        localStorage.setItem("holaaaa", "hola")
+        localStorage.setItem("holaaaa", "hola");
         navigateTo("/home-page");
       } else {
         alert("Invalid credentials");
       }
     });
-    
   });
-  
+
   const formSearch = document.getElementById("form_search");
   const containerSearch = document.getElementById("container_search");
+  const inputformSearch = document.getElementById("input_1");
+
+  console.log(inputformSearch);
+
+  inputformSearch.addEventListener("keyup", (e) => {
+    const value = e.target.value;
+    setTimeout(async () => {
+      const productsLike = await fetch(
+        "http://localhost:4000/api/auth/search-products/" + value
+      );
+      const productsLikeFromJson = await productsLike.json();
+      productsLikeFromJson.forEach((product) => {
+        containerSearch.innerHTML += " " + product.name
+      });
+    }, 1000);
+  });
 
   // Función para mostrar el contenedor de búsqueda
   function mostrarContainerSearch() {
@@ -203,9 +214,9 @@ export function logicNav(){
   formSearch.addEventListener("focusout", ocultarContainerSearch);
 
   // Evento click en el contenedor de búsqueda
-  containerSearch.addEventListener("click", function(event) {
+  containerSearch.addEventListener("click", function (event) {
     event.stopPropagation(); // Evita que el clic se propague al contenedor principal
   });
-  
+
   cargarEventListeners();
 }

@@ -73,8 +73,7 @@ export function HomePagePublic(params) {
               <img class="${styles.arrow}" src="${arrow_back_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
             </div>
             <div class="${styles.cards}">
-              <div class="${styles.slider} slider" id="lista_1">
-              </div>
+              <div class="${styles.slider} slider" id="lista_1"></div>
             </div>
             <div class="${styles.arrows} right" id="right">
               <img class="${styles.arrow}" src="${arrow_forward_ios_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
@@ -137,8 +136,8 @@ export function HomePagePublic(params) {
     </div>
     `;
 
-  const logic = () => {
-    mostrarProductos();
+  const logic = async () => {
+    await mostrarProductos();
 
     let text = document.getElementById('text');
     let leaf = document.getElementById('leaf');
@@ -196,6 +195,8 @@ export function HomePagePublic(params) {
         item.style.transform = `translateX(-${counter * 84}vw)`;
       });
     }
+
+    // end of carousel
 
     // Calcula la posición vertical de la sección "About Us"
     let aboutSectionPosition = aboutSection.offsetTop;
