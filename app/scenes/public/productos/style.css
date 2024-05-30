@@ -87,11 +87,12 @@
     font-size: small;
 }
 
-button{
+a{
     text-decoration: none;
     color: white;
     background-color: #298172;
     border-radius: 10px;
+    padding: 5px;
     width: 5rem;
 }
 
@@ -103,4 +104,83 @@ button{
 
 .contenedortarjet{
     display: flex;
+}
+
+.imagenes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.imagenes img {
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.padre {
+    display: none;
+    align-items: center;
+    margin: 20px;
+    position: absolute;
+    left: 10%;
+    width: 80vw;
+}
+
+.container {
+    background-color: rgba(34, 101, 89, 0.7);
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    min-height: 400px;
+    padding: 30px;
+    border: 5px solid #00251F;
+}
+
+.izquierda {
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: large;
+    width: 40%;
+}
+
+.colores {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.colores .coloresdots {
+    display: flex;
+    margin-left: 15px;
+}
+
+.colores .coloresdots div{ 
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.derecha button {
+    padding: 5px 10px;
+    background-color: #87D8CA;
+    border: #87D8CA;
+    border-radius: 20px;
+    margin-top: 15px;
+    font-size: medium;
+    color:#00251F;
+    font-weight: 500;
+    margin-left: 10px;
 }
