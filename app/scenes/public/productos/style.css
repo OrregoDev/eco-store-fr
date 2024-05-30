@@ -87,15 +87,6 @@
     font-size: small;
 }
 
-a{
-    text-decoration: none;
-    color: white;
-    background-color: #298172;
-    border-radius: 10px;
-    padding: 5px;
-    width: 5rem;
-}
-
 .products{
     display: flex;
     width: 50vw;

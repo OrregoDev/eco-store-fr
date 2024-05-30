@@ -1,5 +1,6 @@
 import style from "./navbar-logic.css";
 import styles from "../../../scenes/public/homePublic/style.css";
+import styless from "../../navbar/navar.css";
 import { navigateTo } from "../../../Router";
 import { verifyToken } from "../../../Router";
 import { formValidator } from "../../../helpers/index";
@@ -90,11 +91,8 @@ export function logicNav() {
     const hijos = lista.children
     const hijosarray = Array.from(hijos);
     let esta;
-    console.log(hijosarray);
     hijosarray.forEach((e) => {
-      console.log(e);
       let tara = e.firstElementChild  
-      console.log(tara);
       if (tara.getAttribute("data-id") === infoElemnto.id) {
         cantidad = parseInt(tara.querySelector("#cantidad").textContent);
         let sumar = tara.querySelector("#sumar");
@@ -127,11 +125,11 @@ export function logicNav() {
         <div class="${style.producto_carrito}" data-id="${elemento.id}">
           <div class="${style.producto_carrito_img_text}">
             <div class="${style.img_product_carrito}">
-                <img src="${elemento.imagen}" width=100>
+                <img id="imagenProdcutoCarrito" src="${elemento.imagen}" width=100>
             </div>
             <div class="${style.info_product_carrito} info_product_carrito">
                 <div class="${style.text_product_carrito} ">
-                    <p>${elemento.titulo}</p>
+                    <p id="productoCarritoTitulo">${elemento.titulo}</p>
                     <p class="precio" id="precios">Precio: $${elemento.precio}</p>
                 </div>
                 <div class="${styles.cantidad}">
@@ -332,6 +330,44 @@ export function logicNav() {
   containerSearch.addEventListener("click", function (event) {
     event.stopPropagation(); // Evita que el clic se propague al contenedor principal
   });
+
+  const modal = document.getElementById("vistaModal");
+  const btnModal = document.getElementById("pagar");
+
+  btnModal.onclick = function(e) {
+      e.preventDefault()
+      modal.style.display = "flex";
+      const elementosCarritoPagar = lista.children
+      const productoPagar = Array.from(elementosCarritoPagar);
+      const allProductSelect = document.querySelector(`.${styless.productos_pagar}`);
+      const totalPagoSelecionado = document.querySelector(`.${styless.pagoTotal}`);
+      productoPagar.forEach((e) => {
+        let elementoSelecionado = e.firstElementChild
+        let infoElementoSelecionadoimg = elementoSelecionado.querySelector("#imagenProdcutoCarrito").src;
+        let infoElementoSelecionadoNombre = elementoSelecionado.querySelector("#productoCarritoTitulo").textContent;
+        let infoElementoSelecionadoPrecio = elementoSelecionado.querySelector("#precios").textContent;
+        let infoElementoSelecionadoCantidad = elementoSelecionado.querySelector("#cantidad").textContent;
+        
+        let infoElementoSelecionado = document.createElement('div');
+        infoElementoSelecionado.classList.add(styless.info_product);
+        infoElementoSelecionado.innerHTML = `
+        <img src="${infoElementoSelecionadoimg}"/>
+        <div class="${styless.text_info}">
+            <h3>${infoElementoSelecionadoNombre}</h3>
+            <p>${infoElementoSelecionadoPrecio}</p>
+            <p>Cantidad ${infoElementoSelecionadoCantidad}</p>
+        </div>
+        `;
+        allProductSelect.appendChild(infoElementoSelecionado)
+      })
+      totalPagoSelecionado.textContent = `Total: $${precio}`
+  } 
+
+  window.onclick = function(event) {
+      if (event.target == modal) {
+          modal.style.display = "none";
+      }
+  }
 
   cargarEventListeners();
 }
