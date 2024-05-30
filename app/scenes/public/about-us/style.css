@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+:root {
+    --primary-color: #298172;
+    --second-color: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    /* border: solid 1px red; */
+}
+/* ------------------------HEADER------------------------------ */
+
+.wallpaper_container {
+    /* background-image: url('/img/background.png');  */
+    background-size: cover;
+    background-position: center;
+    position: fixed; /* 'fixed' para que siempre esté en el fondo */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Coloca la imagen detrás del contenido */
+}
+
+.about_container {
+    position: relative;
+    z-index: 1; /* hace que el contenido esté por delante del fondo */
+    background: rgba(255, 255, 255, 0.8); /* Fondo semitransparente para mejor legibilidad */
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    backdrop-filter: blur(5px); /* Opcional: añade un desenfoque de fondo */
+}
+
+/* --------------------CONTENIDO ABOUT------------------------ */
+
+h1,
+h2,
+p,
+li{
+    color: #15483F;
+}
+
+h2{
+    font-size: 25px;
+}
+
+.about_container p{
+    font-size: 20px;
+}
+
+.about_title{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.about_title h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    border-bottom: 3px solid #3DB8A3;
+}
+
+.general_objetive, .project_scope, .Description {
+    margin-bottom: 1.5em;
+}
+
+.general_objetive h2, .project_scope h2, .Description h2 {
+    font-size: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+.general_objetive p, .project_scope p, .Description p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.project_scope li {
+    margin-bottom: 0.5em;
+    font-size: 20px;
+}
+
+/* --------------------FOOTER----------------------- */
+.pie_pagina {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 30vh;
+    background-color: #226559;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.pie_pagina .logo {
+    object-fit: scale-down;
+    object-position: center;
+    height: 100%;
+    /* margin-right: 10%;
+    margin-top: 30px; */
+}
+
+.pie_pagina h2 {
+    color: antiquewhite;
+    font-weight: 400;
+}
+
+.pie_pagina div {
+    margin: 10px;
+}
+
+.pie_pagina ul li {
+    color: #faebd7;
+    list-style: none;
+    padding-top: 5px;
+}
+
+.socials img {
+    height: 50px;
+    width: auto;
+}

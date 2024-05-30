@@ -16,7 +16,7 @@ export function NavigationVar() {
     <nav class="${styles.navigation}">
         <a href="" class="${styles.active}" id="home_nav">Home</a>
         <a href="" id="about">About</a>
-        <a href="" id="producto_nav">products</a>
+        <a href="" id="producto_nav">Products</a>
         <a href="">Contact</a>
     </nav>
   <!-- header buscar, carrito y login -->

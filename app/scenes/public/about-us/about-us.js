@@ -1,48 +1,62 @@
 import { navigateTo } from "../../../Router";
+import background from "../../../assets/img/background.png";
+import styles from "../../../scenes/public/about-us/style.css";
 
 export function AboutUsPage() {
   const pageContent = `
-        <div>
-            <h1>Eco-store</h1>
-            <h1>About Us</h1>
-            <h2>General Objective</h2>
-            <p>The general objective of our Ecommerce page for ecological products is to provide an accessible and 
-            reliable online platform that is user-friendly to navigate, dedicated to sustainable and eco-friendly products, 
-            promoting a responsible and environmentally conscious lifestyle. We aim to encourage the adoption of 
-            responsible consumption practices, support local producers, and reduce the carbon footprint by supporting 
-            ventures that respect ecological balance.
-            </p>
-            <h2>Project Scope</h2>
-            <p>The project will encompass the following key areas:</p>
-            <li>1. Ecommerce Platform Development: Creation of an intuitive and easy-to-navigate website, 
-            with advanced search functions, personalized 
-            recommendations, and an optimized user experience.</li>
-            <li>2. Product Catalog: Selection and curation of a wide variety of ecological products, including organic foods, 
-            personal care items, household products, and sustainable accessories. All products will be rigorously evaluated to 
-            ensure they meet 
-            ecological and sustainability standards.</li>
-            <li>3. Customer Service: Focusing on customer satisfaction and building long-term relationships.</li>
-            <li>4. Education and Awareness: The page will contain a blog and comment section to raise customer awareness 
-            about the importance of ecological products.</li>
-            <h2>Project Description</h2>
-            <p>Our Ecommerce page for ecological products is positioned as a comprehensive solution for consumers seeking 
-            sustainable and environmentally friendly alternatives. The project is structured in several phases, 
-            starting with the development of a robust and user-friendly digital platform. This platform will offer a 
-            personalized and efficient shopping experience,
-             distinguished by its intuitive design and commitment to sustainability.</p>
-             <p>The product catalog will include a carefully selected range of ecological items, covering everything from organic 
-             foods to personal and household 
-             care products. Each product will undergo a rigorous evaluation process to guarantee its ecological authenticity.</p>
-             <p>Finally, our commitment to customer service will be a priority, ensuring that every interaction is positive and constructive. 
-             Through educational content and informative resources, we 
-             will also seek to inspire and empower our customers to adopt more responsible and sustainable consumption practices.</p>
-             <p>In summary, our Ecommerce store for ecological products will not only offer products but also become a benchmark in promoting 
-              a greener and more conscious lifestyle, 
-             benefiting both our customers and the environment.</p>
-             <h2>Prototype</h2>
-             <p>Prototype source:</p> 
-             <a href="https://www.canva.com/design/DAGErBdxfPw/GcRNlwV9qZn9u06bsz8kcg/edit?utm_content=DAGErBdxfPw&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Canva</a>
-        </div>
+  <body>
+      <header>
+          <section class="${styles.wallpaper_container}">
+          </section>
+      </header>
+      <main>
+          <section class="${styles.about_container}">
+              <div class="${styles.about_title}">
+                  <h1>About Us</h1>
+              </div>
+              <div class="${styles.general_objetive}">
+                  <h2>General Objective</h2>
+                  <p>The general objective of our Ecommerce page for ecological products is to provide an accessible and 
+                  reliable online platform that is user-friendly to navigate, dedicated to sustainable and eco-friendly products, 
+                  promoting a responsible and environmentally conscious lifestyle. We aim to encourage the adoption of 
+                  responsible consumption practices, support local producers, and reduce the carbon footprint by supporting 
+                  ventures that respect ecological balance.
+                  </p>
+              </div>
+              <div class="${styles.project_scope}">
+                  <h2>Project Scope</h2>
+                  <p>The project will encompass the following key areas:</p>
+                  <li>1. Ecommerce Platform Development: Creation of an intuitive and easy-to-navigate website, 
+                  with advanced search functions, personalized 
+                  recommendations, and an optimized user experience.</li>
+                  <li>2. Product Catalog: Selection and curation of a wide variety of ecological products, including organic foods, 
+                  personal care items, household products, and sustainable accessories. All products will be rigorously evaluated to 
+                  ensure they meet 
+                  ecological and sustainability standards.</li>
+                  <li>3. Customer Service: Focusing on customer satisfaction and building long-term relationships.</li>
+                  <li>4. Education and Awareness: The page will contain a blog and comment section to raise customer awareness 
+                  about the importance of ecological products.</li>
+              </div>
+              <div class="${styles.Description}">
+                  <h2>Project Description</h2>
+                  <p>Our Ecommerce page for ecological products is positioned as a comprehensive solution for consumers seeking 
+                  sustainable and environmentally friendly alternatives. The project is structured in several phases, 
+                  starting with the development of a robust and user-friendly digital platform. This platform will offer a 
+                  personalized and efficient shopping experience,
+                  distinguished by its intuitive design and commitment to sustainability.</p>
+                  <p>The product catalog will include a carefully selected range of ecological items, covering everything from organic 
+                  foods to personal and household 
+                  care products. Each product will undergo a rigorous evaluation process to guarantee its ecological authenticity.</p>
+                  <p>Finally, our commitment to customer service will be a priority, ensuring that every interaction is positive and constructive. 
+                  Through educational content and informative resources, we 
+                  will also seek to inspire and empower our customers to adopt more responsible and sustainable consumption practices.</p>
+                  <p>In summary, our Ecommerce store for ecological products will not only offer products but also become a benchmark in promoting 
+                  a greener and more conscious lifestyle, 
+                  benefiting both our customers and the environment.</p>
+              </div>
+          </section>
+      </main>
+  </body>
     `;
   const logic = () => {
     let user = document.getElementById("user");
