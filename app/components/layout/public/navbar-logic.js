@@ -294,10 +294,12 @@ export function logicNav() {
   const formSearch = document.getElementById("form_search");
   const containerSearch = document.getElementById("container_search");
   const inputformSearch = document.getElementById("input_1");
+  const cont_search = document.getElementById('cont_search');
 
   console.log(inputformSearch);
 
   inputformSearch.addEventListener("keyup", (e) => {
+    cont_search.style.display = "block";
     const value = e.target.value;
     setTimeout(async () => {
       const productsLike = await fetch(
@@ -305,26 +307,39 @@ export function logicNav() {
       );
       const productsLikeFromJson = await productsLike.json();
       productsLikeFromJson.forEach((product) => {
-        containerSearch.innerHTML += " " + product.name
+        containerSearch.innerHTML += `
+        <div class="${styless.container}">
+        <div class="${styless.imgContainer}">
+          <img
+            src="${product.image}"
+            alt=""
+          >
+        </div>
+        <div class="${styless.textContainer}">
+          <h2 class="${styless.text}">${product.name}</h2>
+          <a class="${styles.btn2} agregar_carrito" data-id="${product.id}">Add to cart</a>
+        </div>
+      </div>
+        `
       });
     }, 1000);
   });
 
-  // Función para mostrar el contenedor de búsqueda
-  function mostrarContainerSearch() {
-    containerSearch.style.display = "block";
-  }
+  // // Función para mostrar el contenedor de búsqueda
+  // function mostrarContainerSearch() {
+  //   containerSearch.style.display = "block";
+  // }
 
-  // Función para ocultar el contenedor de búsqueda
-  function ocultarContainerSearch() {
-    containerSearch.style.display = "none";
-  }
+  // // Función para ocultar el contenedor de búsqueda
+  // function ocultarContainerSearch() {
+  //   containerSearch.style.display = "none";
+  // }
 
-  // Evento focus en el formulario de búsqueda
-  formSearch.addEventListener("focusin", mostrarContainerSearch);
+  // // Evento focus en el formulario de búsqueda
+  // formSearch.addEventListener("focusin", mostrarContainerSearch);
 
-  // Evento blur en el formulario de búsqueda
-  formSearch.addEventListener("focusout", ocultarContainerSearch);
+  // // Evento blur en el formulario de búsqueda
+  // formSearch.addEventListener("focusout", ocultarContainerSearch);
 
   // Evento click en el contenedor de búsqueda
   containerSearch.addEventListener("click", function (event) {
@@ -367,6 +382,11 @@ export function logicNav() {
       if (event.target == modal) {
           modal.style.display = "none";
       }
+      if (!(event.target == cont_search)) {
+        cont_search.style.display = "none";
+        console.log("hola")
+    }
+    
   }
 
   cargarEventListeners();

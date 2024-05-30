@@ -1,4 +1,5 @@
 import { NavigationVar } from "../../navbar/index";
+import { footer } from "../../footer";
 import { logicNav } from './navbar-logic'
 
 export function DashboardLayoutPublic(pageContent, logic) {
@@ -12,6 +13,7 @@ export function DashboardLayoutPublic(pageContent, logic) {
       ${pageContent}
     </div>
     <div class="">
+      ${footer()}
     </div>
   </div>
   `;

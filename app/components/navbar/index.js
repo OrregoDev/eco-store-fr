@@ -23,11 +23,12 @@ export function NavigationVar() {
   <div class="${styles.nav_active}">
     <form action="" method="" class="${styles.search}" id="form_search">
         <input type="text" name="q" class="${styles.search_input}" id="input_1" placeholder="Buscar...">
-        <img src="${search_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
-        <div class="${styles.search_cont}" id="container_search">
+        <img class="${styles.lupa_search}" src="${search_24dp_FILL0_wght400_GRAD0_opsz24}" alt="">
+        <div class="${styles.search_cont}" id="cont_search">
+          <section class="${styles.sectionCards}" id="container_search">
+          </section>
+        </div>
     </form>
-    
-    </div>
     <div class="${styles.icon} ${styles.submenu}" id="carrito">
       <img src="${shopping_cart_24dp_FILL0_wght400_GRAD0_opsz24}"  alt="">
                     <div class="${styles.carrito}" id="carrito">

@@ -108,31 +108,6 @@ export function HomePagePublic(params) {
         </section>
 
     </main>
-    <footer class="${styles.pie_pagina}">
-      <img class="${styles.logo}" src="${logo}" alt="img">
-      <div class="${styles.contact}">
-        <h2>Contacto</h2>
-        <ul>
-          <li>ATENCION AL CLIENTE</li>
-          <li>Email:cliente.bioproteccion@gmail.com</li>
-          <li>Cel: 30044</li>
-        </ul>
-      </div>
-
-      <div class="${styles.Address}">
-        <h2>Direccion</h2>
-        <ul>
-          <li>Zona Industrial Juanchito Torraza</li>
-          <li>10 Bodega 03, Manizales- Caldas</li>
-          <li>606 894 6604</li>
-        </ul>
-        <div class="${styles.Socials}">
-          <h2>Redes Sociales</h2>
-          <img src="${facebook}" alt="icon"><img src="${whastp}" alt="icon"><img src="${youtube}" alt="icon">
-          <!-- en caso de tener que cambiar el color, se usa boxicons -->
-        </div>
-      </div>
-    </footer>
     </div>
     `;
 
